@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  producer_id: 1
+  wine_name: MyString
+  producer: MyString
+  varietal: MyString
+  varietal2: MyString
+  year: MyString
+  vintage: 1
+
+two:
+  producer_id: 1
+  wine_name: MyString
+  producer: MyString
+  varietal: MyString
+  varietal2: MyString
+  year: MyString
+  vintage: 1

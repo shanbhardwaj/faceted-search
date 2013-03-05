@@ -1,0 +1,17 @@
+<%= form_for(@retailer_ledger) do |f| %>
+  <% if @retailer_ledger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@retailer_ledger.errors.count, "error") %> prohibited this retailer_ledger from being saved:</h2>
+
+      <ul>
+      <% @retailer_ledger.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

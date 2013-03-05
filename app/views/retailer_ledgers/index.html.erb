@@ -1,0 +1,21 @@
+<h1>Listing retailer_ledgers</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @retailer_ledgers.each do |retailer_ledger| %>
+  <tr>
+    <td><%= link_to 'Show', retailer_ledger %></td>
+    <td><%= link_to 'Edit', edit_retailer_ledger_path(retailer_ledger) %></td>
+    <td><%= link_to 'Destroy', retailer_ledger, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Retailer ledger', new_retailer_ledger_path %>

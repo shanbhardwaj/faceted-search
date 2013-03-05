@@ -1,0 +1,66 @@
+<h1>Listing wines</h1>
+
+<%= form_tag wines_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<div id="facets">
+  <h3>Wines by Varietal</h3>
+  <ul>
+    
+    <% for row in @search.facet(:varietal).rows %>
+      <li>
+        <% if params[:varietal].blank? %>
+          <%= link_to row.value, :varietal => row.value, :region => params[:region] %> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :varietal => nil, :region => params[:region]  %>)
+        <% end %>
+      </li>
+    <% end %>
+    
+  </ul>
+    
+  <h3>Wines by region</h3>
+  <ul>
+    <% for row in @search.facet(:region).rows %>
+      <li>
+        <% if params[:region].blank? %>
+          <%= link_to row.value, :region=> row.value , :varietal => params[:varietal]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :region => nil, :varietal => params[:varietal] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
+<table>
+  <tr>
+    <th>Wine name</th>
+    <th>region</th>
+    <th>Varietal</th>
+    <th>Year</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @wines.each do |wine| %>
+  <tr>
+    <td><%= wine.wine_name %></td>
+    <td><%= wine.region%></td>
+    <td><%= wine.varietal %></td>
+    <td><%= wine.year %></td>
+    <td><%= link_to 'Show', wine %></td>
+    <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
+    <td><%= link_to 'Destroy', wine, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Wine', new_wine_path %>

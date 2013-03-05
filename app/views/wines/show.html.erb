@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Producer:</b>
+  <%= @wine.producer_id %>
+</p>
+
+<p>
+  <b>Wine name:</b>
+  <%= @wine.wine_name %>
+</p>
+
+<p>
+  <b>Producer:</b>
+  <%= @wine.producer %>
+</p>
+
+<p>
+  <b>Varietal:</b>
+  <%= @wine.varietal %>
+</p>
+
+<p>
+  <b>Varietal2:</b>
+  <%= @wine.varietal2 %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @wine.year %>
+</p>
+
+<p>
+  <b>Vintage:</b>
+  <%= @wine.vintage %>
+</p>
+
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>
