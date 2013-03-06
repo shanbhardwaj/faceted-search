@@ -1,4 +1,4 @@
-<h1>Listing wines</h1>
+<h1>Listing wines</h1> <h2> Total - <%= @search.total %> </h2>
 
 <%= form_tag wines_path, :method => :get do %>
   <p>
@@ -6,11 +6,80 @@
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-
+<table>
+  <tr>
+    <td>
 <div id="facets">
-  <h3>Wines by Varietal</h3>
+  <h3>Wines by Retailer Type</h3>
+  <ul>
+    <% for row in @search.facet(:retailer_type).rows %>
+      <li>
+        <% if params[:retailer_type].blank? %>
+          <%= link_to row.value, :retailer_type=> row.value , :retailer_type => params[:retailer_type]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type => nil, :retailer_type => params[:retailer_type] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Distance</h3>
   <ul>
     
+    <% for row in @search.facet(:distance).rows %>
+      <li>
+        <% if params[:distance].blank? %>
+          <%= link_to row.value, :distance => row.value, :distance => params[:distance] %> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :distance => nil, :distance => params[:distance]  %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <!-- Wine Price not handled yet -->
+
+  <h3>Wines by Wine Type</h3>
+  <ul>
+    <% for row in @search.facet(:wine_type).rows %>
+      <li>
+        <% if params[:wine_type].blank? %>
+          <%= link_to row.value, :wine_type=> row.value , :wine_type => params[:wine_type]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :wine_type => nil, :wine_type => params[:wine_type] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Expert Rating</h3>
+  <ul>
+    <% for row in @search.facet(:expert_rating).rows %>
+      <li>
+        <% if params[:expert_rating].blank? %>
+          <%= link_to row.value, :expert_rating=> row.value , :expert_rating => params[:expert_rating]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :expert_rating => nil, :expert_rating => params[:expert_rating] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Reviews</h3>
+  <ul>
+    <% for row in @search.facet(:review).rows %>
+      <li>
+        <% if params[:review].blank? %>
+          <%= link_to row.value, :review=> row.value , :review => params[:review]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :review => nil, :review => params[:review] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Varietal</h3>
+  <ul>
     <% for row in @search.facet(:varietal).rows %>
       <li>
         <% if params[:varietal].blank? %>
@@ -20,10 +89,48 @@
         <% end %>
       </li>
     <% end %>
+  </ul><br/>
+
+  <h3>Wines by White Varietal</h3>
+  <ul>
+    <% for row in @search.facet(:white_varietal).rows %>
+      <li>
+        <% if params[:white_varietal].blank? %>
+          <%= link_to row.value, :white_varietal=> row.value , :white_varietal => params[:white_varietal]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :white_varietal => nil, :white_varietal => params[:white_varietal] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Red Varietal</h3>
+  <ul>
+    <% for row in @search.facet(:red_varietal).rows %>
+      <li>
+        <% if params[:red_varietal].blank? %>
+          <%= link_to row.value, :red_varietal=> row.value , :red_varietal => params[:red_varietal]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :red_varietal => nil, :red_varietal => params[:red_varietal] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Champagne Varietal</h3>
+  <ul>
+    <% for row in @search.facet(:champagne_varietal).rows %>
+      <li>
+        <% if params[:champagne_varietal].blank? %>
+          <%= link_to row.value, :champagne_varietal=> row.value , :champagne_varietal => params[:champagne_varietal]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :champagne_varietal => nil, :champagne_varietal => params[:champagne_varietal] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
     
-  </ul>
-    
-  <h3>Wines by region</h3>
+  <h3>Wines by Region</h3>
   <ul>
     <% for row in @search.facet(:region).rows %>
       <li>
@@ -34,11 +141,66 @@
         <% end %>
       </li>
     <% end %>
+  </ul><br/>
+
+  <h3>Wines by Sub Region</h3>
+  <ul>
+    <% for row in @search.facet(:sub_region).rows %>
+      <li>
+        <% if params[:sub_region].blank? %>
+          <%= link_to row.value, :sub_region=> row.value , :sub_region => params[:sub_region]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :sub_region => nil, :sub_region => params[:sub_region] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+
+  <h3>Wines by Producer</h3>
+  <ul>
+    <% for row in @search.facet(:producer).rows %>
+      <li>
+        <% if params[:producer].blank? %>
+          <%= link_to row.value, :producer=> row.value , :producer => params[:producer]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :producer => nil, :producer => params[:producer] %>)
+        <% end %>
+      </li>
+    <% end %>
   </ul>
 
+  <h3>Wines by Size</h3>
+  <ul>
+    <% for row in @search.facet(:size).rows %>
+      <li>
+        <% if params[:size].blank? %>
+          <%= link_to row.value, :size=> row.value , :size => params[:size]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :size => nil, :size => params[:size] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+  
+
+  <h3>Wines by Year</h3>
+  <ul>
+    <% for row in @search.facet(:year).rows %>
+      <li>
+        <% if params[:year].blank? %>
+          <%= link_to row.value, :year=> row.value , :year => params[:year]%> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "x", :year => nil, :year => params[:year] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
 </div>
+
+</td>
+<td valign="top">
 <table>
-  <tr>
+  <tr align="left">
     <th>Wine name</th>
     <th>region</th>
     <th>Varietal</th>
@@ -64,3 +226,7 @@
 <br />
 
 <%= link_to 'New Wine', new_wine_path %>
+
+</td>
+</tr>
+</table>

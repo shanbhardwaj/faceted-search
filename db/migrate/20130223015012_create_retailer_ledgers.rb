@@ -1,8 +1,8 @@
 class CreateRetailerLedgers < ActiveRecord::Migration
   def change
-    create_table :retailer_ledgers do |t|
+    # create_table :retailer_ledgers do |t|
 
-      t.timestamps
-    end
+    #   t.timestamps
+    # end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130221101759) do
+ActiveRecord::Schema.define(:version => 20130306112324) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -80,6 +80,20 @@ ActiveRecord::Schema.define(:version => 20130221101759) do
     t.string   "sunday_on_hours",    :limit => 10
     t.string   "sunday_off_hours",   :limit => 10
     t.boolean  "by_the_glass"
+  end
+
+  create_table "wine_reviews", :force => true do |t|
+    t.integer  "wine_id"
+    t.integer  "user_id"
+    t.string   "expert"
+    t.string   "title"
+    t.integer  "rating"
+    t.string   "review",         :limit => 500
+    t.string   "reviewer"
+    t.date     "date"
+    t.string   "unscrewed_rate"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "wines", :force => true do |t|

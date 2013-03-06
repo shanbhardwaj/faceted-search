@@ -7,15 +7,63 @@ class WinesController < ApplicationController
 
   @search = Wine.search do
     fulltext params[:search]
-    with(:location).in_radius(lat, lng, 45)
+    any_of do
+      with(:location).in_radius(lat, lng, 15)
+      with(:retailer_type, "Online Store")
+    end
 
     with(:varietal, params[:varietal]) if params[:varietal].present?
     with(:producer, params[:producer]) if params[:producer].present?
     with(:region, params[:region]) if params[:region].present?
-    facet :varietal, :producer, :region
-    # facet(:producer)
-    # facet(:region)
+    with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
+    facet :varietal, :producer, :region, :sub_region, :retailer_type, :wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :size, :review
+    facet(:distance) do
+      row(0..1) do
+        with(:location).in_radius(lat, lng, 1)
+      end
+      row(1..3) do
+        all_of do
+          without(:location).in_radius(lat, lng, 1)
+          with(:location).in_radius(lat, lng, 3)
+        end
+      end
+      row(3..5) do
+        all_of do
+          without(:location).in_radius(lat, lng, 3)
+          with(:location).in_radius(lat, lng, 5)
+        end
+      end
+      row(5..25) do
+        all_of do
+          without(:location).in_radius(lat, lng, 5)
+          with(:location).in_radius(lat, lng, 25)
+        end
+      end
+      row("any") do
+        # Any distance
+      end
+    end
+    facet(:expert_rating) do
+      row(95..100) do
+        with(:expert_rating, 95.0..100.0)
+      end
+      row(90..95) do
+        with(:expert_rating, 90.0..95.0)
+      end
+      row(85..90) do
+        with(:expert_rating, 85.0..90.0)
+      end
+      row(80..85) do
+        with(:expert_rating, 80.0..85.0)
+      end
+      row("below 85") do
+        with(:expert_rating, 0.0..85.0)
+      end
+    end
+    paginate :page => 1, :per_page => 50
+
   end
+  # debugger
   @wines = @search.results
 
     respond_to do |format|

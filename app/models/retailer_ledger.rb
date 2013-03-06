@@ -1,6 +1,7 @@
 class RetailerLedger < ActiveRecord::Base
 
 belongs_to :wine
+belongs_to :retailer
 
   # searchable do
   #   # string :store do

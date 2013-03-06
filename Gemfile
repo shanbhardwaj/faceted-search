@@ -11,5 +11,6 @@ gem 'sunspot_solr'
 gem 'sunspot_rails'
 
 group :development do
+  gem 'debugger'
   gem 'meta_request', '0.2.1'
 end
