@@ -4,17 +4,17 @@ class WinesController < ApplicationController
   def index
     lat = 34.0126379
     lng = -118.495155
-  # @search = Wine.search(:include => [:wine]) do
+
   @search = Wine.search do
     fulltext params[:search]
-    # with(:coordinates).near(lat, lng, :distance => 45)
-    
+    with(:location).in_radius(lat, lng, 45)
+
     with(:varietal, params[:varietal]) if params[:varietal].present?
     with(:producer, params[:producer]) if params[:producer].present?
     with(:region, params[:region]) if params[:region].present?
     facet :varietal, :producer, :region
     # facet(:producer)
-    # facet(:region)    
+    # facet(:region)
   end
   @wines = @search.results
 
