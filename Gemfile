@@ -13,4 +13,5 @@ gem 'sunspot_rails'
 group :development do
   gem 'debugger'
   gem 'meta_request', '0.2.1'
+  gem 'progress_bar'
 end

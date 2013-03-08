@@ -4,19 +4,37 @@ class WinesController < ApplicationController
   def index
     lat = 34.0126379
     lng = -118.495155
-
-  @search = Wine.search do
+    size = (params[:bottlesize])? params[:bottlesize] : "750ML"
+    page = (params[:page])? params[:page] : 1
+  @search = RetailerLedger.search do
+    group :group_str do
+        truncate
+    end
+      
     fulltext params[:search]
     any_of do
       with(:location).in_radius(lat, lng, 15)
       with(:retailer_type, "Online Store")
     end
-
+    size_filter = with(:bottlesize, size)
+    with(:in_stock, true)
     with(:varietal, params[:varietal]) if params[:varietal].present?
     with(:producer, params[:producer]) if params[:producer].present?
     with(:region, params[:region]) if params[:region].present?
     with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
-    facet :varietal, :producer, :region, :sub_region, :retailer_type, :wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :size, :review
+    with(:bottlesize, params[:bottlesize]) if params[:bottlesize].present?
+    with(:sub_region, params[:sub_region]) if params[:sub_region].present?
+    with(:wine_type, params[:wine_type]) if params[:wine_type].present?
+    with(:white_varietal, params[:white_varietal]) if params[:white_varietal].present?
+    with(:red_varietal, params[:red_varietal]) if params[:red_varietal].present?
+    with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
+    with(:year, params[:year]) if params[:year].present?
+    with(:review, params[:review]) if params[:review].present?
+    # with(:distance, params[:distance]) if params[:distance].present?
+    # with(:expert_rating, params[:expert_rating]) if params[:expert_rating].present?
+
+    facet :varietal, :producer, :region, :sub_region, :retailer_type, :wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :review
+    facet :bottlesize, :exclude => size_filter
     facet(:distance) do
       row(0..1) do
         with(:location).in_radius(lat, lng, 1)
@@ -60,12 +78,14 @@ class WinesController < ApplicationController
         with(:expert_rating, 0.0..85.0)
       end
     end
-    paginate :page => 1, :per_page => 50
+    paginate :page => page, :per_page => 30
 
   end
-  # debugger
-  @wines = @search.results
 
+   @wines = []
+  # @wines = @search.results.wines
+    wine_ids = @search.group(:group_str).groups.map { |p| p.value.split(",")[0].to_i }
+    @wines = Wine.where(:id => wine_ids)
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @wines }
