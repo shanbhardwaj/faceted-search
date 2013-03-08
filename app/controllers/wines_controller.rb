@@ -30,6 +30,25 @@ class WinesController < ApplicationController
     with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
     with(:year, params[:year]) if params[:year].present?
     with(:review, params[:review]) if params[:review].present?
+    if params[:distance].present?
+      loc = params[:distance].split("..")
+      all_of do
+          without(:location).in_radius(lat, lng, loc[0].to_i) unless loc[0] == "0"
+          with(:location).in_radius(lat, lng, loc[1].to_i) 
+        end
+    end
+    if params[:expert_rating].present?
+      rat = params[:expert_rating].split("..")
+      if rat.count == 1
+        # case of "below 85"
+        with(:expert_rating).less_than 80
+      else
+         all_of do
+          with(:expert_rating).less_than(rat[1].to_i)
+          with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
+        end
+      end
+    end
     # with(:distance, params[:distance]) if params[:distance].present?
     # with(:expert_rating, params[:expert_rating]) if params[:expert_rating].present?
 
@@ -63,25 +82,33 @@ class WinesController < ApplicationController
     end
     facet(:expert_rating) do
       row(95..100) do
-        with(:expert_rating, 95.0..100.0)
+        with(:expert_rating).greater_than_or_equal_to(95.0)
       end
       row(90..95) do
-        with(:expert_rating, 90.0..95.0)
+        all_of do
+           with(:expert_rating).greater_than_or_equal_to(90.0)
+          with(:expert_rating).less_than(95.0)
+        end
       end
       row(85..90) do
-        with(:expert_rating, 85.0..90.0)
+        all_of do
+           with(:expert_rating).greater_than_or_equal_to(85.0)
+          with(:expert_rating).less_than(90.0)
+        end
       end
       row(80..85) do
-        with(:expert_rating, 80.0..85.0)
+        all_of do
+           with(:expert_rating).greater_than_or_equal_to(80.0)
+          with(:expert_rating).less_than(85.0)
+        end
       end
-      row("below 85") do
-        with(:expert_rating, 0.0..85.0)
+      row("below 80") do
+        with(:expert_rating).less_than(80.0)
       end
     end
     paginate :page => page, :per_page => 30
 
   end
-
    @wines = []
   # @wines = @search.results.wines
     wine_ids = @search.group(:group_str).groups.map { |p| p.value.split(",")[0].to_i }
