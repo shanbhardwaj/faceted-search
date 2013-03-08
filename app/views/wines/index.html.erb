@@ -1,4 +1,4 @@
-<h1>Listing wines</h1> <h2> Total - <%= @search.total %> </h2>
+<h1>Listing wines</h1> <h2> Total - <%= @search.group(:group_str).total %> </h2>
 <table>
   <tr>
     <td>
