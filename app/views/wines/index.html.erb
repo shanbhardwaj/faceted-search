@@ -1,22 +1,22 @@
-<h1>Listing wines</h1> <h2> Total - <%= @search.group(:group_str).total %> </h2>
-<table>
-  <tr>
-    <td>
+<h1>Listing wines</h1> <h2> Total - <%= @search.group(:wine_group_str).total %> </h2>
 <%= form_tag wines_path, :method => :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
+<table>
+  <tr>
+    <td>
 <div id="facets">
   <h3>Wines by Retailer Type</h3>
   <ul>
-    <% for row in @search.facet(:retailer_type).rows %>
+    <% for row in @retailerType.facet(:retailer_type).rows %>
       <li>
         <% if params[:retailer_type].blank? %>
           <%= link_to row.value, :retailer_type=> row.value, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> nil, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> nil, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -24,16 +24,35 @@
 
   <h3>Wines by Distance</h3>
   <ul>
-    
-    <% for row in @search.facet(:distance).rows %>
+  <% if params[:distance].present? %>
+      <strong><%= params[:distance] %></strong> (<%= @search.group(:wine_group_str).total %>) (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => nil, :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]  %>)
+    <% else %>
+    <% if @distance_0to1.group(:wine_group_str).total > 0 %>
       <li>
-        <% if params[:distance].blank? %>
-          <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => row.value, :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= row.count %>)
-        <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => nil, :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]  %>)
-        <% end %>
+        <%= link_to "0..1", :retailer_type=> params[:retailer_type], :distance => "0..1", :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= @distance_0to1.group(:wine_group_str).total %>)
       </li>
     <% end %>
+    <% if @distance_1to3.group(:wine_group_str).total > 0 %>
+    <li>
+        <%= link_to "1..3", :retailer_type=> params[:retailer_type], :distance => "1..3", :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= @distance_1to3.group(:wine_group_str).total %>)
+      </li>
+    <% end %>
+    <% if @distance_3to5.group(:wine_group_str).total > 0 %>
+    <li>
+        <%= link_to "3..5", :retailer_type=> params[:retailer_type], :distance => "3..5", :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= @distance_3to5.group(:wine_group_str).total %>)
+      </li>
+    <% end %>
+    <% if @distance_5to25.group(:wine_group_str).total > 0 %>
+    <li>
+        <%= link_to "5..25", :retailer_type=> params[:retailer_type], :distance => "0..1", :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= @distance_5to25.group(:wine_group_str).total %>)
+      </li>
+    <% end %>
+    <% if @search.group(:wine_group_str).total > 0 %>
+    <li>
+        <%= link_to "any", :retailer_type=> params[:retailer_type], :distance => "any", :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= @search.group(:wine_group_str).total %>)
+      </li>
+    <% end %>
+  <% end %>
   </ul><br/>
 
   <!-- Wine Price not handled yet -->
@@ -45,7 +64,7 @@
         <% if params[:wine_type].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => row.value, :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => nil, :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => nil, :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -58,7 +77,7 @@
         <% if params[:expert_rating].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => row.value, :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => nil, :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => nil, :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -71,7 +90,7 @@
         <% if params[:review].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => row.value, :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => nil, :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => nil, :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -84,7 +103,7 @@
         <% if params[:varietal].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => row.value, :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => nil, :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]  %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => nil, :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]  %>)
         <% end %>
       </li>
     <% end %>
@@ -97,7 +116,7 @@
         <% if params[:white_varietal].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => row.value, :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => nil, :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => nil, :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -110,7 +129,7 @@
         <% if params[:red_varietal].blank? %>
           <%= link_to row.value, :retailer_type=>params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => row.value, :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => nil, :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => nil, :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -123,7 +142,7 @@
         <% if params[:champagne_varietal].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => row.value, :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => nil, :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => nil, :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -136,7 +155,7 @@
         <% if params[:region].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => row.value, :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => nil, :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => nil, :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -149,7 +168,7 @@
         <% if params[:sub_region].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => row.value, :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => nil, :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => nil, :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -162,7 +181,7 @@
         <% if params[:producer].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => row.value, :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => nil, :bottlesize => params[:bottlesize], :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => nil, :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -175,7 +194,7 @@
         <% if params[:bottlesize].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => row.value, :year => params[:year]%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => nil, :year => params[:year] %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => nil, :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
@@ -189,7 +208,7 @@
         <% if params[:year].blank? %>
           <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => row.value%> (<%= row.count %>)
         <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => nil %>)
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => nil %>)
         <% end %>
       </li>
     <% end %>

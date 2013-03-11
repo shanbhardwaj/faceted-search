@@ -38,14 +38,21 @@ belongs_to :retailer
     boolean :in_stock
     latlon(:location) { Sunspot::Util::Coordinates.new(retailer.lat, retailer.lng) unless retailer.nil? }
     string :bottlesize
-    string(:group_str)
+    string :wine_group_str
+    string :retailer_type_group_str
+    string(:retailer_id_str) { retailer_id.to_s}
+    string(:wine_id_str) { wine_id.to_s}
     integer :retailer_id
     integer :wine_id, :stored => true
 
   end
 
-  def group_str
+  def wine_group_str
     return wine_id.to_s + "," + bottlesize
+  end
+
+  def retailer_type_group_str
+    return wine_id.to_s + "," + retailer.retailer_type unless retailer.nil? 
   end
 
   def expert_rating

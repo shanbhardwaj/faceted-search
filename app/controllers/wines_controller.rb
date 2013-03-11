@@ -7,14 +7,15 @@ class WinesController < ApplicationController
     size = (params[:bottlesize])? params[:bottlesize] : "750ML"
     page = (params[:page])? params[:page] : 1
   @search = RetailerLedger.search do
-    group :group_str do
+    group :wine_group_str do
         truncate
     end
-      
     fulltext params[:search]
-    any_of do
-      with(:location).in_radius(lat, lng, 15)
-      with(:retailer_type, "Online Store")
+    if params[:distance].blank? and params[:retailer_type].blank?
+      f = any_of do
+        with(:location).in_radius(lat, lng, 50)
+        with(:retailer_type, "Online Store") 
+      end
     end
     size_filter = with(:bottlesize, size)
     with(:in_stock, true)
@@ -40,11 +41,11 @@ class WinesController < ApplicationController
     if params[:expert_rating].present?
       rat = params[:expert_rating].split("..")
       if rat.count == 1
-        # case of "below 85"
+        # case of "below 80"
         with(:expert_rating).less_than 80
       else
          all_of do
-          with(:expert_rating).less_than(rat[1].to_i)
+          with(:expert_rating).less_than(rat[1].to_i) unless rat[1] == "100"
           with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
         end
       end
@@ -52,34 +53,8 @@ class WinesController < ApplicationController
     # with(:distance, params[:distance]) if params[:distance].present?
     # with(:expert_rating, params[:expert_rating]) if params[:expert_rating].present?
 
-    facet :varietal, :producer, :region, :sub_region, :retailer_type, :wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :review
+    facet :varietal, :producer, :region, :sub_region,:wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :review
     facet :bottlesize, :exclude => size_filter
-    facet(:distance) do
-      row(0..1) do
-        with(:location).in_radius(lat, lng, 1)
-      end
-      row(1..3) do
-        all_of do
-          without(:location).in_radius(lat, lng, 1)
-          with(:location).in_radius(lat, lng, 3)
-        end
-      end
-      row(3..5) do
-        all_of do
-          without(:location).in_radius(lat, lng, 3)
-          with(:location).in_radius(lat, lng, 5)
-        end
-      end
-      row(5..25) do
-        all_of do
-          without(:location).in_radius(lat, lng, 5)
-          with(:location).in_radius(lat, lng, 25)
-        end
-      end
-      row("any") do
-        # Any distance
-      end
-    end
     facet(:expert_rating) do
       row(95..100) do
         with(:expert_rating).greater_than_or_equal_to(95.0)
@@ -109,9 +84,216 @@ class WinesController < ApplicationController
     paginate :page => page, :per_page => 30
 
   end
+
+
+  @retailerType = RetailerLedger.search do
+    group :retailer_type_group_str do
+      truncate
+    end
+    
+    fulltext params[:search]
+    if params[:distance].blank? and params[:retailer_type].blank?
+      any_of do
+        with(:location).in_radius(lat, lng, 50)
+        with(:retailer_type, "Online Store")
+      end
+    end
+    with(:bottlesize, size)
+    with(:in_stock, true)
+    with(:varietal, params[:varietal]) if params[:varietal].present?
+    with(:producer, params[:producer]) if params[:producer].present?
+    with(:region, params[:region]) if params[:region].present?
+    with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
+    with(:bottlesize, params[:bottlesize]) if params[:bottlesize].present?
+    with(:sub_region, params[:sub_region]) if params[:sub_region].present?
+    with(:wine_type, params[:wine_type]) if params[:wine_type].present?
+    with(:white_varietal, params[:white_varietal]) if params[:white_varietal].present?
+    with(:red_varietal, params[:red_varietal]) if params[:red_varietal].present?
+    with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
+    with(:year, params[:year]) if params[:year].present?
+    with(:review, params[:review]) if params[:review].present?
+    if params[:distance].present?
+      loc = params[:distance].split("..")
+      all_of do
+          without(:location).in_radius(lat, lng, loc[0].to_i) unless loc[0] == "0"
+          with(:location).in_radius(lat, lng, loc[1].to_i) 
+        end
+    end
+    if params[:expert_rating].present?
+      rat = params[:expert_rating].split("..")
+      if rat.count == 1
+        # case of "below 80"
+        with(:expert_rating).less_than 80
+      else
+         all_of do
+          with(:expert_rating).less_than(rat[1].to_i) unless rat[1] == "100"
+          with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
+        end
+      end
+    end
+    facet :retailer_type 
+  end
+  if params[:distance].nil?
+    @distance_0to1 = RetailerLedger.search do
+      group :wine_group_str do
+        truncate
+      end
+      
+      fulltext params[:search]
+      # any_of do
+        with(:location).in_radius(lat, lng, 1)
+        # with(:retailer_type, "Online Store")
+      # end
+      with(:bottlesize, size)
+      with(:in_stock, true)
+      with(:varietal, params[:varietal]) if params[:varietal].present?
+      with(:producer, params[:producer]) if params[:producer].present?
+      with(:region, params[:region]) if params[:region].present?
+      with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
+      with(:bottlesize, params[:bottlesize]) if params[:bottlesize].present?
+      with(:sub_region, params[:sub_region]) if params[:sub_region].present?
+      with(:wine_type, params[:wine_type]) if params[:wine_type].present?
+      with(:white_varietal, params[:white_varietal]) if params[:white_varietal].present?
+      with(:red_varietal, params[:red_varietal]) if params[:red_varietal].present?
+      with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
+      with(:year, params[:year]) if params[:year].present?
+      with(:review, params[:review]) if params[:review].present?
+      # with(:location).in_radius(lat, lng, 1)
+      if params[:expert_rating].present?
+        rat = params[:expert_rating].split("..")
+        if rat.count == 1
+          # case of "below 80"
+          with(:expert_rating).less_than 80
+        else
+           all_of do
+            with(:expert_rating).less_than(rat[1].to_i) unless rat[1] == "100"
+            with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
+          end
+        end
+      end
+    end
+  @distance_1to3 = RetailerLedger.search do
+    group :wine_group_str do
+      truncate
+    end
+    
+    fulltext params[:search]
+    all_of do
+      without(:location).in_radius(lat, lng, 1)
+      with(:location).in_radius(lat, lng, 3)
+      # with(:retailer_type, "Online Store")
+    end
+    with(:bottlesize, size)
+    with(:in_stock, true)
+    with(:varietal, params[:varietal]) if params[:varietal].present?
+    with(:producer, params[:producer]) if params[:producer].present?
+    with(:region, params[:region]) if params[:region].present?
+    with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
+    with(:bottlesize, params[:bottlesize]) if params[:bottlesize].present?
+    with(:sub_region, params[:sub_region]) if params[:sub_region].present?
+    with(:wine_type, params[:wine_type]) if params[:wine_type].present?
+    with(:white_varietal, params[:white_varietal]) if params[:white_varietal].present?
+    with(:red_varietal, params[:red_varietal]) if params[:red_varietal].present?
+    with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
+    with(:year, params[:year]) if params[:year].present?
+    with(:review, params[:review]) if params[:review].present?
+    # with(:location).in_radius(lat, lng, 1)
+    if params[:expert_rating].present?
+      rat = params[:expert_rating].split("..")
+      if rat.count == 1
+        # case of "below 80"
+        with(:expert_rating).less_than 80
+      else
+         all_of do
+          with(:expert_rating).less_than(rat[1].to_i) unless rat[1] == "100"
+          with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
+        end
+      end
+    end
+  end
+  @distance_3to5 = RetailerLedger.search do
+    group :wine_group_str do
+      truncate
+    end
+    
+    fulltext params[:search]
+    all_of do
+      without(:location).in_radius(lat, lng, 3)
+      with(:location).in_radius(lat, lng, 5)
+      # with(:retailer_type, "Online Store")
+    end
+    with(:bottlesize, size)
+    with(:in_stock, true)
+    with(:varietal, params[:varietal]) if params[:varietal].present?
+    with(:producer, params[:producer]) if params[:producer].present?
+    with(:region, params[:region]) if params[:region].present?
+    with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
+    with(:bottlesize, params[:bottlesize]) if params[:bottlesize].present?
+    with(:sub_region, params[:sub_region]) if params[:sub_region].present?
+    with(:wine_type, params[:wine_type]) if params[:wine_type].present?
+    with(:white_varietal, params[:white_varietal]) if params[:white_varietal].present?
+    with(:red_varietal, params[:red_varietal]) if params[:red_varietal].present?
+    with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
+    with(:year, params[:year]) if params[:year].present?
+    with(:review, params[:review]) if params[:review].present?
+    # with(:location).in_radius(lat, lng, 1)
+    if params[:expert_rating].present?
+      rat = params[:expert_rating].split("..")
+      if rat.count == 1
+        # case of "below 80"
+        with(:expert_rating).less_than 80
+      else
+         all_of do
+          with(:expert_rating).less_than(rat[1].to_i) unless rat[1] == "100"
+          with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
+        end
+      end
+    end
+  end
+  @distance_5to25 = RetailerLedger.search do
+    group :wine_group_str do
+      truncate
+    end
+    
+    fulltext params[:search]
+    all_of do
+      without(:location).in_radius(lat, lng, 5)
+      with(:location).in_radius(lat, lng, 25)
+      # with(:retailer_type, "Online Store")
+    end
+    with(:bottlesize, size)
+    with(:in_stock, true)
+    with(:varietal, params[:varietal]) if params[:varietal].present?
+    with(:producer, params[:producer]) if params[:producer].present?
+    with(:region, params[:region]) if params[:region].present?
+    with(:retailer_type, params[:retailer_type]) if params[:retailer_type].present?
+    with(:bottlesize, params[:bottlesize]) if params[:bottlesize].present?
+    with(:sub_region, params[:sub_region]) if params[:sub_region].present?
+    with(:wine_type, params[:wine_type]) if params[:wine_type].present?
+    with(:white_varietal, params[:white_varietal]) if params[:white_varietal].present?
+    with(:red_varietal, params[:red_varietal]) if params[:red_varietal].present?
+    with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
+    with(:year, params[:year]) if params[:year].present?
+    with(:review, params[:review]) if params[:review].present?
+    # with(:location).in_radius(lat, lng, 1)
+    if params[:expert_rating].present?
+      rat = params[:expert_rating].split("..")
+      if rat.count == 1
+        # case of "below 80"
+        with(:expert_rating).less_than 80
+      else
+         all_of do
+          with(:expert_rating).less_than(rat[1].to_i) unless rat[1] == "100"
+          with(:expert_rating).greater_than_or_equal_to(rat[0].to_i)
+        end
+      end
+    end
+  end
+end
+
    @wines = []
   # @wines = @search.results.wines
-    wine_ids = @search.group(:group_str).groups.map { |p| p.value.split(",")[0].to_i }
+    wine_ids = @search.group(:wine_group_str).groups.map { |p| p.value.split(",")[0].to_i }
     @wines = Wine.where(:id => wine_ids)
     respond_to do |format|
       format.html # index.html.erb
