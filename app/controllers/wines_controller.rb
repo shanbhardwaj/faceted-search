@@ -53,7 +53,8 @@ class WinesController < ApplicationController
     # with(:distance, params[:distance]) if params[:distance].present?
     # with(:expert_rating, params[:expert_rating]) if params[:expert_rating].present?
 
-    facet :varietal, :producer, :region, :sub_region,:wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :review
+      facet :varietal, :limit => 5
+      facet :producer, :region, :sub_region, :wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :review, :limit => 5
     facet :bottlesize, :exclude => size_filter
     facet(:expert_rating) do
       row(95..100) do

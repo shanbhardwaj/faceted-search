@@ -82,20 +82,6 @@ ActiveRecord::Schema.define(:version => 20130306112324) do
     t.boolean  "by_the_glass"
   end
 
-  create_table "wine_reviews", :force => true do |t|
-    t.integer  "wine_id"
-    t.integer  "user_id"
-    t.string   "expert"
-    t.string   "title"
-    t.integer  "rating"
-    t.string   "review",         :limit => 500
-    t.string   "reviewer"
-    t.date     "date"
-    t.string   "unscrewed_rate"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-  end
-
   create_table "wines", :force => true do |t|
     t.integer  "producer_id"
     t.string   "wine_name"
