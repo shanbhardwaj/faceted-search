@@ -1,0 +1,1215 @@
+#Wrapper{ margin:auto; padding:0; background-position:top center;}
+.InnerContainer{width:1024px;margin:20px auto;}
+.HeaderTop{width:100%; height:28px;}
+.Login{float:right; }
+.Login a{ text-decoration:none;}
+.Login a:hover{ text-decoration:underline;}
+.Logo{margin-top:0; margin-bottom:15px; width:100%;}
+.LogoImage{width:231px; float:left;}
+.Search{padding-top:2px;}
+.Searchowner{width:450px; float:left; color:#000000; padding-top:5px;}
+.InputCategory{width:220px; float:left; font-size:14px; height:18px; padding-left:10px; margin-right:8px; padding-bottom:3px; border-width:thin; border-color:#999999;color:#000000;}
+.InputCategory1{width:360px; float:left; font-size:13px; height:18px; margin-right:8px; padding-bottom:3px; border-width:thin; border: 1px solid #C5C5C5; color:#222222; padding-left:5px; margin-left: -14px;}
+.InputCategory2{width:153px; float:left; font-size:13px; height:18px; margin-right:4px; padding-bottom:3px; border-width:thin; border: 1px solid #C5C5C5; color:#222222; padding-left:5px;}
+#iphone{width:220px; float:right; margin-right:50px; font-size:13px;}
+#iphone div{margin:-30px 0 0 30px;}
+#iphone div a:hover{ text-decoration:underline;}
+.MiddleContainer{margin-right:8px; margin-left:166px; margin-top:12px; }
+.Breadcumb{ font-size:11px; margin-bottom:9px; margin-top:18px; color: #808080;}
+.Breadcumb a{text-decoration:none; color:#808080;}
+.Breadcumb a:hover{text-decoration:underline;}
+.PageHeading{margin-top: 10px;}
+.PageHeading a{text-decoration:none; color:#808080;}
+.TextBold{font-weight:bold; font-size:18px;}
+.TextNormal{font-weight:normal; font-size:13px; color: #222;}
+#winesummhead{margin-top:5px;}
+.SubText{font-size:14px;}
+.ContentMiddle{width:580px; float:left;}
+#ContentMiddle{}
+.ContentRight{width:252px; float:right;}
+.ContentRightPages{width:300px; float:left;}
+.ContentMiddlepages{width:680px; float:left; margin-right:10px;}
+.ContentMiddlepages p{ font-weight:bold; font-size:16px;}
+.ContentMiddlefindit{width:680px; float:left; margin-right:20px;}
+.ContentRightfindit{width:290px; float:left;}
+.ContentMiddleDetail{width: 680px;float: left;}
+.addwines{margin-top:-20px; text-align:left; font-weight:bold; float:right; width:245px;}
+.addwines input{ height:20px;}
+.alertbutton{float:right; margin-right:2px; margin-top:-2px;}
+.getalert{font-size:16px; margin-left:2px;}
+.add{ font-weight:bold; font-size:15px; margin-bottom:10px;}
+.addsub{font-size:12px; margin-top:10px;}
+.SearchStoreButton{margin-right: 8px;}
+.emailinput{ height:20px; border:1px solid #000000;}
+.searchbutton{float:left; margin-top:1px; margin-left:4px;}
+.getdeal{float:left; color:#BB0000; margin-bottom:5px; margin-left:3px; font-size:14px;}
+.getdeal a{ color:#22508D; font-weight:bold; font-size:16px;}
+.facebooklike{float:right; margin-top:-1px;}
+.plus{float:right; margin-top:-3px; margin-right:20px;}
+.LeftNavigation {margin:0px; padding-left:0; padding-top:9px;}
+.LeftNavigation ul  {margin:0px ; padding-left:0px; list-style-type:none; line-height:18px;}
+/*.LeftNavigation ul li.first {line-height:17px; font-size:13px; font-weight:bold; margin:0px 0px 0px 0px; color: #000;}
+.LeftNavigation ul li.first a {color: #000;}
+.LeftNavigation ul li.last{ padding-bottom:16px; color:#999999;}
+.LeftNavigation ul li.last a{ padding-bottom:16px; color:#000000;}*/
+.LeftNavigation ul li.more{ color:#222;}
+.LeftNavigation ul li.more a{color:#222;}
+.LeftNavigation ul li.more a:hover{ font-weight:bold;}
+.LeftNavigation ul li a{ text-decoration:none; color:#222;}
+.LeftNavigation ul li a:hover{ text-decoration:none; font-weight:bold;}
+.value{color:#A2A2A2; font-size: 11px;}
+.LeftLinksAreatips{padding-top:20px;}
+.LeftLinksArea{padding-top:8px; padding-right:10px;}
+.clearfilter{color:#999999;}
+.clearfilter a{color:#999999; text-decoration:none;}
+.clearfilter a:hover{font-weight:bold;}
+#Tabs{ background-color:#F6F6F6; width:100%; height:28px; float:left; border-bottom:1px solid #D2D2D2; margin-top:25px; }
+#Tabs ul{list-style-type: none;margin: 6px 0 0 0;padding: 0px 10px 0px 14px;}
+#Tabs ul li{position:relative; display:inline; float: left; padding:0px 40px 0px 0px; }
+#Tabs ul li a{display:block; color:#999999; text-decoration:none; font-size:13px;}
+#Tabs ul li a span{color: #ffffff;}
+#Tabs ul li a.firsttab{ background-color:#ffffff; height:20px; font-weight:bold;padding-left: 8px;padding-right: 8px;padding-top: 2px; border-left:1px solid #999999; border-right:1px solid #999999; border-top:1px solid #999999; border-bottom:none;-moz-border-radius-topleft:2px; border-top-left-radius:2px; -moz-border-radius-topright:2px; border-top-right-radius:2px; color:#000;}
+#Tabs ul li.firsttab a{color:#000000;}
+
+#bulk-tabs{ background-color:#EFEFEF; width:100%; height:28px; float:left; }
+
+.heading{font-size:16px; font-weight:bold; margin-top:30px;}
+.heading a{font-size:16px; font-weight:bold; margin-top:20px; text-decoration:none;}
+.SortBy{margin-top:8px; margin-left:10px; margin-bottom:6px; }
+.SortBy td{color:#808080; font-size:13px;}
+.SortBy td a{color:#808080; font-size:13px; text-decoration:none;}
+.SortBy td a:hover{font-weight:bold;}
+/*.SortBy ul{margin: 0;padding: 0px;list-style-type: none; line-height:30px;}
+.SortBy ul li{position: relative;display: inline;float: left; font-size:13px; color:#777777;}
+.SortBy ul li a{display: block; color:#777777; padding: 0px 10px; text-decoration: none; font-size:13px;}
+.SortBy ul li a:hover{font-weight:bold;}*/
+.sort2{ width:100%; float:left; margin-top:-30px; height:30px; }
+.sort2 ul{margin: 0;padding: 0px 2px 0px 0px;list-style-type: none; line-height:30px; margin-left:10px; float:right;}
+.sort2 ul li{position: relative;display: inline;float: left; font-size:12px;}
+.sort2 ul li a{display: block; color:#808080; text-decoration: none; font-size:12px;}
+.sort2 ul li a:hover{ font-weight:bold;}
+#sortright{ float:right;}
+.sms{ margin-top:-50px;}
+.email{ margin-top:-50px;}
+#Product{padding-top:10px;  padding-bottom: 10px; width:100%}
+.Product{padding-top:7px;  padding-bottom:7px; width:100%}
+.ProductImage{ max-height: 102px; max-width: 99px;padding: 1px;text-align: center;vertical-align: middle;}
+.productline{color:#222222;}
+.ProductDetail{ float:left;  padding-top:1px; width:100%;}
+.ProductDetail p{ line-height:17px;}
+.ProductDetail p{ margin:0px; padding:0px;}
+.ProductPrice{width:139px; float:right; padding-top:5px;}
+.ProductName{ color:#000000;font-weight:bold; font-size:16px;}
+.ProductName a{ text-decoration:underline; color:#000000;} 
+.ProductName a:hover{text-decoration:underline;}
+.ProductGreyText{color:#999999; }
+.ProductPriceText{ font-size:15px;}
+.points{}
+.cost{font-weight:bold;color: #222;}
+.stock, .user, .expert, .stock1, .stock2, .stock3, .stock4{color:#222; font-size:11px;}
+.expert a, .user a{color:#808080; text-decoration:none; font-size: 11px;}
+.expert a:hover, .user a:hover{font-weight:bold;}
+.detailuser, .detailexpert{color:#808080; font-size:13px;}
+.detailuser a, .detailexpert a{color:#808080; font-size:13px;}
+.detailuser a:hover, .detailexpert a:hover{ text-decoration: underline}
+.sum_detail{color: #808080;}
+.subdetail{margin-top:20px;}
+.detailpercent{font-weight:bold; font-size:14px;}
+.detailpoints{font-weight:bold; margin-top:10px; font-size:14px;}
+.typedetail{ margin-top:20px; font-size:13px;line-height: 19px;}
+/*#report, #report1,#report2,#report3,#report4,#report5{ float:left; color:#999999; font-size:13px; }
+#report a, #report1 a, #report2 a, #report3 a, #report4 a,#report5 a{ color:#999999; font-size:13px; text-decoration:none;}
+#report a:hover,#report1 a:hover,#report2 a:hover,#report3 a:hover,#report4 a:hover,#report5 a:hover{ text-decoration:underline;}*/
+/*.map{margin-top:30px; margin-left:20px;position: relative;z-index: -1;}*/
+.map{height:250px;}
+#store_map{position: fixed;}
+.map a{text-decoration:none; color:#999999; font-size:13px;}
+.map p{margin-top:10px;}
+.map a:hover{text-decoration:underline;}
+#map{margin-top:30px; margin-left:20px;position: relative;z-index: -1;}
+#map a{text-decoration:none; color:#999999; font-size:13px;}
+#map p{margin-top:10px;}
+#map a:hover{text-decoration:underline;}
+.find-itmap{margin-top:25px;width:312px;height:286px;border: 1px solid #777}
+.review {margin:40px 0px 0px 20px; padding-top:9px; }
+.review ul  {margin:0px ; padding-left:0px; list-style-type:none; line-height:18px; }
+.review ul li{color:#999999;}
+.review ul li.first {line-height:18px; font-size:13px; font-weight:bold; margin:0px 0px 5px 0px; color:#000000;}
+.review ul li.last{ padding-bottom:16px;}
+.review ul li a{ text-decoration:none; color:#003366;}
+.reviewcount {color:#999999;}
+.rightnavigation {margin:40px 0px 0px 20px; padding-top:9px;}
+.rightnavigation ul {margin:0px ; padding-left:0px; list-style-type:none; line-height:18px;}
+.rightnavigation ul li{margin:0px ; padding-left:0px; list-style-type:none; line-height: 23px; color:#777777;display: block;}
+.rightnavigation ul li.first {line-height:18px; font-size:14px; font-weight:bold; margin:0px 0px 5px 0px; color:#010101}
+.rightnavigation ul li.last{ padding-bottom:16px;}
+.rightnavigation ul li a{ text-decoration:none; color:#808080; font-size:13px;}
+.rightnavigation ul li a:hover{ text-decoration: underline;}
+.tips{border-top: 1px solid #EDEDED;}
+.tips-retail p{font-size:16px; font-weight:bold; margin-top:30px; margin-bottom:20px;}
+.tips p{font-size:16px; font-weight:bold; margin-top:20px; margin-bottom:20px;}
+#tips{}
+#tips p{font-size:16px; font-weight:bold;}
+.comment{margin-top:10px; padding-bottom:27px;}
+.comment1{margin-top:10px; margin-bottom: 10px;}
+.comment2{padding-bottom:27px;}
+.detail{ text-align:justify;}
+.commentimage{ margin-right:14px; margin-top:5px; float:left;}
+.CommentDetail1{ float:left; margin-top:0px;}
+.CommentDetail p{ line-height:19px;}
+.CommentDetail p{ margin:0px; padding:0px;}
+sup{color:#777777;}
+.re{ font-weight:normal; font-size:13px;}
+.retitle{color:#999999; font-weight:normal; font-size:13px;}
+.comment-title{font-weight:bold; font-size:14px; margin-bottom:4px;}
+.viewcomment{color:#999999; margin-top:20px;}
+.commentnumber{color:#999999;}
+.view-wines{color:#777777; margin-top:20px;}
+.winenumber{color:#777777;}
+.Date{color:#999999; float: left;}
+.comment, .share{color:#999999;}
+.comment a{color:#999999; text-decoration:none;}
+.share a{color:#999999; text-decoration:none;}
+.comment a:hover{color:#999999; text-decoration:underline;}
+.share a:hover{color:#999999; text-decoration:underline;}
+.newcomment{}
+.newcomment-wine{margin-top:40px;}
+.newcommentimage{ margin-right:14px;float:left;}
+textarea{ font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+textarea:focus{ border-color:#C5B71F; font-family:Arial, Helvetica, sans-serif; outline: none;box-shadow: 0px 0px 8px #c5b71f;-moz-box-shadow: 0px 0px 8px #c5b71f;-webkit-box-shadow: 0px 0px 8px #c5b71f;}
+.facebookshare{float:left; margin-top:17px; margin-bottom:20px;}
+.facebookshare-addwine{float:right; margin-top:15px; margin-bottom:20px; margin-right:35px;}
+.addwine{float:left; margin-top:17px; margin-bottom:20px;}
+.winelist{ font-size:11px;margin-left: 17px;margin-top: -13px;}
+.post{margin-right:20px; margin-top:10px; float:left; margin-left:-2px;}
+.check{ margin-top:-10px;}
+.external{margin-top:20px;border-top: 1px solid #EDEDED;}
+.external p{font-size:16px; font-weight:bold; margin-top:20px; margin-bottom:20px;}
+#external{margin-top:20px;border-top: 1px solid #EDEDED;}
+#external p{font-size:16px; font-weight:bold; margin-top:20px; margin-bottom:20px;}
+.review1{ margin-top:20px;}
+#review1{ margin-top:20px;}
+.review2{margin-top:20px;}
+.external-title{color:#999999; margin-bottom:10px;}
+.sharecomment1, .sharecomment2{float:left;}
+.reviewcomment1, .reviewcomment2{float:left;}
+.reviewcomment{float:left;}
+.addreviewheading{font-weight:bold; font-size:16px; margin-bottom:10px; padding-top:20px;}
+.browse{ margin-top:10px;}
+.content{ margin-top:5px;}
+.imagedetail{margin-left: 10px;padding-top: 10px;}
+.imagebig{margin-top:30px; margin-bottom:10px;width: 215px;height: 210px;border: 1px solid #EBEBEB;text-align: center;}
+.addphoto{color:#808080; font-size:11px;}
+.productreview{margin-top: -10px;}
+.productreview a{text-decoration:underline; color:#000000;}
+.tablesummary{border-top:1px solid #000000; margin-top:0px; font-size:14px;}
+.column1{color:#808080; font-size:13px;}
+.column2{font-weight:bold; font-size:13px;}
+.column1 a{color:#808080; text-decoration:none;}
+.column1 a:hover{text-decoration:underline;}
+.addlist{float:right; color:#808080;}
+.addlist a{ color:#808080; text-decoration:none;}
+.addlist a:hover{ color:#808080; text-decoration:none;}
+.lowest{ font-size:14px;}
+.lowestvalue{ font-size:12px; margin-left:85px;}
+.vote{color:#808080; font-size:11px; }
+.vote b{ color:#000000;}
+.vote-no{color:#808080; font-size:11px; }
+.vote-no b{ color:#000000;}
+.optional{ margin-top:20px;}
+.addreview{float:right; color:#8E8E8E; font-size:13px; font-weight:normal; margin-right: 30px;}
+.addreview a{float:right; color:#8E8E8E; font-size:13px; font-weight:normal; text-decoration:none;}
+.addreview a:hover{ text-decoration:underline;}
+.expertreview{  margin-bottom:20px;}
+.expertreview p{font-weight:bold; font-size:16px; margin-top:16px; margin-bottom:10px;}
+.expert-title{font-weight:bold; font-size:14px; margin-top:20px;margin-bottom: 4px;}
+.expertcomment{ width:100%;}
+.expertname{color:#808080;}
+.expertname a:hover{color:#808080; text-decoration:underline; cursor:pointer;}
+.expertdate{color:#808080;}
+.quality{font-weight:bold; font-size:13px;}
+.quality a{color:#000000; text-decoration:none;}
+.quality a:hover{color:#000000; text-decoration:underline;}
+.property{color:#000000; font-size:13px;}
+.property a{color:#000000; text-decoration:none;}
+.property a:hover{color:#000000; text-decoration:underline;}
+.propertyhed{color:gray; font-size:13px;}
+.propertyhed a{color:gray; text-decoration:none;}
+.propertyhed a:hover{color:gray; text-decoration:underline;}
+.facebookpost{margin-top:-17px; margin-left:42px;}
+.winedetail{padding-top:10px;  padding-bottom:25px; width:100%; font-size:13px;border-bottom:1px solid #EDEDED ;}
+.winedetailleft{ margin-right:14px; float:left; }
+.winedetailleft p{ line-height:25px;font-size:12px;font-weight:normal;}
+.winedetailright{ float:left; margin-top: 3px;}
+.winedetailright p{ line-height:25px; margin:0px; padding:0px; font-size:12px; font-weight:normal;}
+.ProductPrice{width:139px; float:right; padding-top:5px;}
+.ProductName{ color:#000000;font-weight:bold; font-size:15px;}
+.ProductName a{ text-decoration:underline; color:#000000;} 
+.ProductName a:hover{text-decoration:underline;}
+.adddetailleft a{ color:#696969; text-decoration:none; font-size: 13px;}
+.adddetailright a{ color:#999999; text-decoration:none;}
+.nearby{padding-top:10px; padding-bottom:10px;width:100%}
+.nearbyimage{ margin-right:8px; margin-left:4px; float:left;}
+.blend{color:#000000;font-size:13px; font-weight: bold;}
+.nearbydetail{ float:left; text-align:left;}
+.nearbydetail p{ line-height:15px;}
+.nearbydetail p{ margin:0px; padding:0px;}
+.nearbyprice{float:left; font-weight:bold; font-size:13px;padding-left: 4px;}
+.nearbystore{ float:left; font-weight:normal; font-size:11px; color: #808080;}
+.nearbyname{ color:#000000;font-size:13px;}
+.nearbyname a{ text-decoration:none; color:#000000;} 
+.nearbyname a:hover{text-decoration:underline;}
+.market a{color:#999999; font-size:13px; text-decoration:none;}
+.market a:hover{text-decoration:none;}
+.mi{color:#999999; font-size:13px;}
+.nearbysimilar p{ font-size:14px; margin-left:3px;}
+.nearbysimilar{margin-top:25px;}
+.online{padding-top:10px; padding-bottom:10px;width:100%}
+.onlineimage{ margin-right:8px; margin-left:4px; float:left;}
+.blendonline{color:#000000; font-size:13px;}
+.onlinedetail{ float:left; text-align:left;}
+.onlinedetail p{ line-height:15px;}
+.onlinedetail p{ margin:0px; padding:0px;}
+.onlineprice{float:left; font-weight:bold; font-size:13px; padding-left: 4px;}
+.onlinename{ color:#000000; font-size:13px; font-weight: bold;}
+.onlinename a{ text-decoration:underline; color:#000000; font-weight: bold;} 
+.percent{color:#222222;}
+.market a{color:#999999; font-size:13px; text-decoration:none;}
+.market a:hover{text-decoration:underline;}
+.mi{color:#999999; font-size:13px;}
+.similaronline p{ font-size:16px; margin-left:3px;}
+.similaronline p.head{ font-size:14px; font-weight:bold;}
+.similaronline{margin-top:20px; margin-bottom:20px;}
+#contentchange1{ width:570px;}
+#contentchange2{ width:570px;}
+.addcross{background-image:url(/assets/cross.png); background-repeat:no-repeat; background-position:right; font-weight:bold; cursor:pointer;}
+.adddyncross{background-image:url(/assets/cross.png); background-repeat:no-repeat;font-weight:bold; cursor:pointer;}
+#spark{ line-height:15px;}
+.detailsmiddle{}
+.detailsmiddle ul li.first{margin-top:20px; margin-bottom:10px; font-weight:bold; font-size:13px;}
+.detailsmiddle ul li{ line-height:18px;}
+.detailtable{margin-top:7px;}
+.top{ font-weight:bold; padding-top:20px; padding-bottom:10px; font-size: 16px;}
+.owner{float:right; margin-top:2px; color:#000000; font-size:11px;}
+.owner a{text-decoration:none;}
+.owner a:hover{text-decoration:underline;}
+.accurate{float:right; margin-top:2px; margin-right:20px; margin-left:20px;color:#000000; font-size:11px;}
+.accurate a{text-decoration:none;}
+.accurate a:hover{text-decoration:underline;}
+.addwinedetail{margin-top:-60px; text-align:right; font-weight:normal; float:right; width:245px; font-size:12px;}
+.getdealalert{ font-size:13px; color:#000000;}
+.getdealalert a{ font-size:13px; color:#000000;}
+.getdealalert a:hover{ text-decoration:underline;}
+.editstore{ color:#777777; font-size:13px; font-weight:normal;}
+.editstore a{color:#777777; font-size:13px; font-weight:normal; text-decoration:none; float:right;}
+.editstore a:hover{ text-decoration:underline;}
+.addphotos{ color:#777777; font-size:13px; font-weight:normal;}
+.addphotos a{color:#777777; font-size:13px; font-weight:normal; text-decoration:none;}
+.addphotos a:hover{ text-decoration:underline;}
+
+.addtolist{
+	display:none;
+	width:320px;
+	height:250px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+.addtolist div{
+	background-color:#fff;
+}
+.addtolist a{
+	text-decoration: none;
+	color:#777777;
+}
+.addtolist a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+.reportstock a{
+	text-decoration: none;
+	color:#777777;
+}
+.reportstock a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+.reportprice a{
+	text-decoration: none;
+	color:#777777;
+}
+.reportprice a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+#addreviewdiv a{
+	text-decoration: none;
+	color:#777777;
+}
+#addreviewdiv a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+#addreviewdiv1 {
+	display:none;
+	width:280px;
+	height:260px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#addreviewdiv1 div{
+	background-color:#fff;
+}
+#addreviewdiv1 a{
+	text-decoration: none;
+	color:#777777;
+}
+#addreviewdiv1 a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+#deal-alertdiv {
+	display:none;
+	width:480px;
+	height:200px;
+	padding:10px;
+	background-color:#FFF;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#deal-alertdiv div{
+	background-color:#fff;
+}
+#deal-alertdiv a{
+	text-decoration: none;
+	color:#777777;
+}
+#deal-alertdiv a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+#addedwinediv {
+	display:none;
+	width:300px;
+	height:200px;
+	padding:10px;
+	background-color:#FFF;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+}
+#addedwinediv div{
+	background-color:#fff;
+}
+#daddedwinediv a{
+	text-decoration: none;
+	color:#777777;
+}
+#addedwinediv a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+.alertcheck{ float:right; margin-top:-1px;}
+.dealalert{ font-weight:normal;}
+/*.modal{width:220px; padding-left:5px; font-size:12px; color:#999999; border-width:thin; border-color:#999999; float:left; margin-top:10px;}
+*/.modaloption{width:220px; height:40px; padding-left:5px; font-size:12px; color:#999999; border-width:thin; float:left; margin-top:10px; margin-bottom:10px;} 
+.listemail{font-size: 24px;font-weight: bold;margin-top: -25px;margin-left: 45px; margin-bottom:10px;}
+.listsms{font-size: 24px;font-weight: bold;margin-top: -30px;margin-left: 30px; margin-bottom:10px;}
+.right{float:right;}
+.left{float:left;}
+.list{font-size:24px; font-weight:bold;}
+.listdiv{ margin:20px;background-color:#FFF;}
+.nav1{}
+.findnear{ margin-top:20px; margin-bottom:10px; font-size:16px; font-weight:bold;}
+.findonline{ margin-top:40px; margin-bottom:10px; font-size:16px; font-weight:bold;}
+.findbar{ margin-top:40px; margin-bottom:10px; font-size:16px; font-weight:bold;}
+.findnear a{ text-decoration:none;}
+.findonline a{ text-decoration:none;}
+.findbar a{ text-decoration:none;}
+#barshow{padding-left: 5px;}
+#nearbyshow{padding-left: 5px;}
+#onlineshow{padding-left: 5px;}
+#arrow, #arrow1, #arrow2{margin-left:-6px;}  
+table.bulksorter{ width:100%;border-collapse:collapse;  }
+#arrow, #arrow1, #arrow2{margin-left:-6px;}  
+table.bulksorter th{ background-color:#F3F3F3; line-height:10px; font-weight:normal; font-size:13px;font-weight:bold;}
+.bulksorter tr.header1{height:25px; background-color:#F3F3F3; }
+table.bulksorter tr{height:26px;}
+table.bulksorter tbody td {color: #3D3D3D;	padding-top: 4px;	background-color: #FFF;	vertical-align: top;}
+table.bulksorter tbody td a{ text-decoration:none;}
+table.bulkinnersorter{ width:100%;border-collapse:collapse;}
+#arrow, #arrow1, #arrow2{margin-left:-6px;}  
+table.bulkinnersorter th{   padding-left:50px;background-color:white;line-height:10px; font-weight:normal; font-size:13px;font-weight:bold;}
+.bulkinnersorter tr.header1{height:25px; background-color:#F3F3F3; }
+table.bulkinnersorter tr td{height:32px; width:2px;padding-left:50px;}
+.mousehide{ color:#999999; font-weight:normal; display:none; font-size:13px;}
+.mouseshow{font-weight:normal; display:none; float:right; margin-right:70px;font-size:13px;}
+.bold{ font-size:13px;}
+.retail{ font-size:14px;}
+.retail a{ font-size:14px; text-decoration:none;}
+.retail a:hover{font-size:14px; text-decoration:underline;}
+.view {color:#777777; font-weight:normal; font-size:12px;}
+.view a{color:#777777; text-decoration:none;}
+.price{font-size:14px; font-weight: bold;}
+.editdetailheading{ font-size:16px; font-weight:bold; margin-top:35px; padding-bottom:20px;}
+.editdetailtable{}
+.editlabel{ font-weight:bold; text-align:right;}
+.viewlabel{ font-weight:bold; text-align:left;}
+.learn a{ font-size:11px; padding-top:10px;}
+.learn a:hover{ text-decoration:underline;}
+.inventory{ margin-top:10px;}
+.inventory a{ font-size:11px; padding-top:10px;}
+.inventory a:hover{ text-decoration:underline;}
+.ownerdetail{ font-size:14px; font-weight:bold;}
+.edituploadwine{ font-size:16px; font-weight:bold; margin-top:35px;}
+.textbelow{font-size:11px; padding-left:1px; font-weight:normal;}
+.editinput{
+	font-size:13px; 
+	border: 1px solid #ccc; 
+	float:left; 
+	margin-left: 10px; 
+	margin-top: 2px; 
+	margin-bottom: 2px;
+	box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+	-webkit-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+}
+.submitbutton{background: url("/assets/greybutton.png") 0 no-repeat; padding-left:10px;font-weight:bold;text-decoration:none;padding-right:12px;padding-top:5px;padding-bottom:5px;}
+.submitbuttonnormal{background: url("/assets/greybutton.png") 0 no-repeat; padding-left:12px;font-weight:normal;text-decoration:none;padding-right: 15px;padding-top:5px;padding-bottom:7px; color:#000000;}
+.submitbuttonbrowse{background: url("/assets/greybutton.png") 0 no-repeat; padding-left:11px;font-weight:normal;text-decoration:none;padding-right: 15px;padding-top:5px;padding-bottom:7px; color:#000000;}
+.signIn{font-weight:normal;text-decoration:none;padding-right: 20px;padding-top:4px;padding-bottom:7px; color:#000000;}
+.addbutton{background: url("/assets/greybutton.png") 0 no-repeat; padding: 20px; font-weight: bold; text-decoration: none;}
+.save{background: url("/assets/greybutton.png") 0 no-repeat; font-size: 12px; padding-left: 17px;text-decoration: none;margin-left: 3px;padding-right: 20px; padding-top: 16px;padding-bottom: 19px;}
+.remove-btn{background: url("/assets/greybutton.png") 0 no-repeat; font-size: 12px; padding-left: 10px;text-decoration: none;margin-left: 3px;padding-right: 13px; padding-top: 16px;padding-bottom: 19px;}
+#Menuowner{background:url(/assets/menu.png) no-repeat; height:36px; margin-top: 15px; }
+.ownerleftcontainer{ width:580px; float:left;}
+.headingowner{font-size:24px; font-weight:bold; float:left;}
+.headingowner26{font-size:26px; font-weight:bold; float:left;}
+.font11{font-size: 11px;}
+.subheading{font-size:22px; font-weight:bold; margin-left:60px; margin-top:35px;}
+.seller{ margin-left:60px;}
+.ownerrightcontainer{width:450px; float:right;}
+.headingright{font-size:22px; font-weight:bold;margin-top:65px;padding-left: 3px;}
+.headingrightnew{font-size:16px; font-weight:bold;margin-top:40px;}
+.confirmright{font-size:13px;color:green; font-weight:bold;margin-top:45px;margin-left: 6px;}
+.confirmheadright{font-size:22px; font-weight:bold;margin-top:20px;margin-left: 6px;}
+.subheadingright{font-size:18px; font-weight:bold;margin-top:25px;padding-left: 3px;}
+.ownerlabel{ font-weight:bold; text-align:left;}
+.beta{ float:right; margin-right:36px; font-size:14px;}
+.loginuser{float:right; margin-top:30px;}
+.username{font-weight:bold;}
+.accountleftcontainer{ width:450px; float:left; margin-left:10px; margin-top:21px;}
+.headingaccount{font-size:20px; font-weight:bold; float:left;margin-left:7px;}
+.profile{font-size:18px; font-weight:bold;margin-top:48px; margin-left:8px;}
+.accountrightcontainer{width:450px; float:right;}
+.headingaccountright{font-size:22px; font-weight:bold;margin-top:65px;}
+.subheadingaccountright{font-size:18px; font-weight:bold;margin-top:100px; margin-bottom:9px;margin-left: 6px;}
+.accountlabel{ font-weight:bold; text-align:left;font-size: 11px;}
+.accountprofile{ margin:0px;}
+.accountprofile tr{ padding:0px; margin:0px;}
+.checkdetail{ margin-top:-5px;}
+.preference{ font-size:18px; font-weight:bold; margin-top:60px;margin-bottom:17px; padding-left: 5px;}
+.alertme{font-size:13px; font-weight:bold; margin-top:2px;margin-left:6px; margin-bottom:5px;}
+.emailpreferences{ float:right;}
+.savealert{ margin-left:4px;}
+.signupleftcontainer{width:500px; float:left;}
+.signuprightcontainer{width:450px; float:right;}
+.more-signup{ color:#999999;}
+.iphone{font-size:13px; margin-left: 0px;}
+.download a{ color:#999999;}
+.signupinput{font-size:14px; height:30px; border: 1px solid #C2C2C2; float:left; margin:0px; margin-top:-2px; width:326px;}
+#user_zip{font-size:14px; float:left; margin:0px; margin-top:-2px; width:170px;}
+.signupinputyear{font-size:14px;border: 1px solid #999; float:left; margin:0px; margin-top:-2px;}
+.signupname{font-size:14px; float:left; margin-top:-2px;color: #383838;}
+.signupgender{font-size:12px; float:left; color: #383838;margin-left:5px; font-weight: normal; }
+.subheading-signup{font-size:22px; font-weight:bold; margin-left:95px; margin-top:35px;}
+#signupdiv {
+	display:none;
+	width:500px;
+	height:250px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#signupdiv a{
+	text-decoration: none;
+}
+#signupdiv a:hover {
+	text-decoration: underline;
+	color:#000000;
+}
+#signupdiv1 {
+	display:none;
+	width:500px;
+	height:250px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#signupdiv1 a{text-decoration: none;}
+#signupdiv1 a:hover {text-decoration: underline;color:#000000;}
+.signupmodal{margin-left:30px; margin-top:20px;}
+.signup-save{margin-left:39px; margin-top:40px;}
+.signup-import{margin-left:38px; margin-top:15px;}
+.usephoto{ font-weight:normal;}
+.listnew {font-size: 24px;font-weight: bold;margin-top: 10px;margin-left: 5px;}
+#signindiv {
+	display:none;
+	width:400px;
+	height:320px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#route_map{
+	display:none;
+	width:450px;
+	height:450px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#error_dialog {
+	display:none;
+	width:400px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+	color: #000;
+	text-align: center;
+}
+#forgotpassword
+{
+	display:none;
+	width:550px;
+	height:150px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#signindiv a{text-decoration: none;}
+#signindiv a:hover {text-decoration: underline;	color:#000000;}
+.heading-signin{font-size: 24px;font-weight: bold;margin-top: 10px;margin-left: 33px;color: black;}
+.heading-signin-error{font-size: 12px;color:red;font-weight: bold;margin-top: 1px;margin-left: 33px;}
+.forgot{font-size:12px;}
+.signinmodal{margin-left:30px; margin-top:10px;}
+#closeright{font-weight:normal; color:#999999;}
+.alertinput{font-size:14px; height:32px; border: 1px solid #999; float:left; margin-top:1px; color: #787878;}
+.alerthead{font-size:20px;}
+#shareit-box {position:absolute;display:none;}
+#shareit-header {width:200px;}
+#shareit-body {width:216px;	height:280px;padding:10px;	background-color:#FFF;	border:1px solid #999999;font-weight:normal;font-size:13px;}
+#shareit-blank {height:0px;}
+#shareit-url {height:50px;	text-align:center;}
+#shareit-url input.field{width:300px; height:26px;border:none; outline:none;padding:7px 5px 0 5px;margin:3px auto;font-size:11px;}
+#shareit-icon  {height:20px;}
+#shareit-field{width:200px; height:20px; border:1px solid #999999;}
+#shareit-icon ul {list-style:none;	margin:0;	padding:0 0 0 8px;}
+#shareit-icon ul  li{padding:0 2px;}
+#shareit-icon ul  li img{border:none;}			
+.shareit{margin-top:5px;height:20px;}
+.shareheading{font-size:15px;font-weight:bold;margin-bottom:10px;}
+.from{margin-top:6px; margin-bottom:8px;}
+.name{margin-left:1px;}
+.address{color:#999999;}
+.inputshare{margin-left:6px;}
+.cancel{ float:right; color:#999999; font-weight:normal;}
+.cancel a{color:#999999; font-weight:normal; text-decoration:none; font-size:13px;}
+.postreply{margin-top: 8px;}
+#postreply{margin-top:10px; margin-left:2px;}
+#textarea1{margin-left:20px; margin-top:10px;}
+#textarea2{margin-left:20px; margin-top:10px;}
+#textarea3{margin-left:20px; margin-top:10px;}
+#textarea4{margin-left:20px; margin-top:10px;}
+#textarea5{margin-left:20px; margin-top:10px;}
+#textarea6{margin-left:20px; margin-top:10px;}
+#textarea7{margin-left:20px; margin-top:10px;}
+#textarea8{margin-left:20px; margin-top:10px;}
+#textarea9{margin-left:20px; margin-top:10px;}
+#textarea10{margin-left:20px; margin-top:10px;}
+#textarea11{margin-left:20px; margin-top:10px;}
+#textarea12{margin-left:20px; margin-top:10px;}
+.textarea{ margin-top:10px;}
+.reviewtextarea{margin-top:25px; float: left;}
+.Footer{margin-top:20px; border-top:1px solid #E1E1E1;color:#616161;padding-left: 8px;}
+.tablefooter{margin-top:10px;}
+.tablefooter th{font-size:14px; color:#616161;}
+.tablefooter tr{font-size:11px; color:#616161; line-height:11px;}
+.tablefooter td{font-size:11px; color:#616161;}
+#copyright{margin-top:30px; font-size:12px; color:#616161;}
+.footer-icon{margin-top:-21px; color:#616161; margin-left:40px;}
+.storename{font-size:15px;}
+.storename a{text-decoration:underline;}
+.storename a:hover{text-decoration:underline;}
+.storeaddress{margin-left:17px; font-size:13px; margin-top:3px; color: #222;}
+.storewine{margin-left:20px; font-size:11px; margin-top:2px;}
+.storecategory{margin-left:19px; font-size:11px; margin-top:10px;}
+.categoryname{color:#808080;}
+.winecount{color:#808080;}
+.winecount a{text-decoration:none;color:#808080;}
+.winecount a:hover{text-decoration:underline;color:#808080;}
+#storemain{margin-top:10px;}
+.results{margin-top:40px; margin-bottom:5px; font-size:14px;}
+.SortBystore{margin-top:25px; font-size:13px;}
+.SortBystore a{text-decoration:none;color:#808080;}
+.storetable{font-size:12px; border-spacing: 0px;}
+#Nav ul li a.selectedtab{color:#999999;}
+#prehead{font-size:16px; margin-top:20px; margin-left:10px; width:580px;}
+#choosecity{ margin-left:10px; width:200px; float:left;}
+#choosecity ul{list-style-type:none;}
+#choosecity ul li{line-height:22px;}
+#choosecity ul li a{font-size:12px;}
+#choosecity ul li a:hover{text-decoration:underline;}
+#firstli{ font-size:14px;}
+#notlisted{ float:right; width:350px;margin-top: 35px; margin-right:80px;background-color: #F3F3F3;height: 144px;padding: 20px;}
+#zipcoding{ width:100px; border:1px solid #999999;}
+#zipcodediv{margin-left:12px; margin-top:15px; margin-bottom:20px;}
+.newlocation a{font-weight:bold; text-decoration:underline;}
+.newlocation a:hover{text-decoration:underline;}
+.ContentMiddle-prehome{width:720px; float:left;}
+#national{border-top:1px solid #E1E1E1; margin-top:10px; font-size:12px;}
+#national a:hover{text-decoration:underline;}
+#national a{line-height:16px;}
+#national-heading{font-size:15px; font-weight:bold; margin-top:10px; margin-bottom:10px;}
+#nationalbar{border-top:1px solid #E1E1E1; margin-top:30px; font-size:12px;}
+#signup{}
+.ContentRight-prehome{float:right; width:272px;}
+.ContentLeft-storemain{width:185px; float:left;}
+.ContentMiddle-storemain{width:540px; float:left;}
+#fticons{float:right; margin-right:30px;}
+.left{float:left; padding-left:12px; padding-right:0px;}
+#unblog{margin-top:30px;}
+#unblog-heading{font-size:18px; margin-bottom:10px;}
+#unblog a{ font-weight:bold; padding:5px;}
+#homeright{ margin-top:2px; padding-left:5px; font-size:11px;}
+.unblogtable tr{vertical-align:top; height:67px;}
+.participate{margin-top:15px;}
+.participate span a{color:#696969; line-height:20px; text-decoration:none;}
+#join{margin-top:30px;}
+#join td{font-weight:bold; font-size:12px;}
+#join tr{line-height:25px;}
+#anywhere{float:right; width:170px;margin-right: 20px;margin-top: 30px;}
+#iphone-home{margin-top:30px; margin-bottom:20px;}
+#neighbor{margin-top:30px;}
+#neighbor li a{text-decoration:none; color:#777777; line-height:19px; font-size:12px;}
+#neighbor li{list-style-type:none;}
+#neighbor ul{padding:0px;}
+.send a{text-decoration:none; font-weight:bold;}
+#iphonelarge{ margin-left:50px; width:160px; float:left; margin-top:40px; margin-bottom:50px;}
+.imageiphone{margin-left:30px;}
+#bestwines{ float:right; width:430px;margin-top: 40px; margin-right:60px;}
+#bestwines ul li{ list-style-type:square; line-height:20px;}
+#bestwines ul{padding-left:20px;}
+#best-heading{font-size:24px;}
+.bestdetail{line-height:16px; padding-left:2px;}
+#storereds{float:left; width:350px;}
+#barsreds{float:right; width:350px;}
+.storeimage-home{ margin-right:8px; float:left;}
+.homedetail{ float:left; text-align:left;}
+.homename{ color:#000000;font-size:12px;}
+.homeprice{float:left; font-weight:bold; font-size:12px;}
+.blendhome{color:#000000;font-size:12px;}
+.days{color:#999999; font-size:11px; padding-top:5px;}
+#topvalue{border-top:1px solid #E1E1E1; margin-top:30px; font-size:12px;}
+#viewfull{ margin-top:20px;}
+#viewfull a{ font-size:11px; color:#999999; text-decoration:none; }
+#redsv{float:right; margin-right:250px; margin-top:3px; font-weight:normal;}
+#redsv a{ font-size:11px; color:#999999; text-decoration:none;}
+#redsv1{float:right; margin-right:160px; margin-top:3px; font-weight:normal;}
+#redsv1 a{ font-size:11px; color:#999999; text-decoration:none;}
+.input35{ width:250px;}
+.input28{ width:200px;}
+.input50{ width:330px;}
+.input22{width:150px;}
+.input15{width:120px;}
+.input30{width:215px;}
+.input25{ width:185px;}
+.size100{width:100px; }
+.size200{width:200px;}
+.size60{width:60px;}
+.size50{width:50px;}
+.size80{width:80px;}
+.size300{width:300px;}
+.filter{padding-top:16px;}
+#search-content{margin-left:20px; margin-top:40px; font-size:14px;}
+.search-name{font-weight:bold;}
+#search-detail{margin-left:40px; margin-top:10px; line-height:23px; font-size:14px;}
+#noresults{margin-left:20px;margin-top:20px; font-size:14px;}
+#citynotfound{margin-left:20px; margin-top:30px; line-height:18px;}
+
+.bubble {
+width: 50px;
+}
+.bubble h1 {
+margin: 0;
+padding: 0;
+font-size: 150%;
+}
+
+.subright{font-size: 18px; font-weight: bold; margin-top: 50px;}
+.bulksubright{font-size: 14px; font-weight: bold; margin-top: 30px;margin-bottom:10px; margin-left:20px;}
+#sub{font-size:12px; margin-top:5px;}
+#retaileradminright{margin-bottom:20px;}
+#menuadmin{border-bottom:1px solid #000000; height:30px; margin-bottom:20px; margin-top:80px;width:904px;}
+#retailer-admin{border-bottom:1px solid #000000; height:30px; margin-bottom:20px;}
+#menuadmin a{text-decoration:none; font-size:14px;}
+#retailer-admin a{text-decoration:none; font-size:14px;}
+hr{color:#000000;}
+#admin-detail td{text-align:right;}
+#bulk-detail td{text-align:left;width:160px;}
+#admin-wines{margin-top:20px;}
+#winetab{ font-size:11px;}
+#winetab th{background-color:#ebebeb; padding-top:5px; padding-bottom:5px; padding-left:10px; border-spacing:0px; border:none; border-collapse:collapse;}
+#winetab td{font-size:11px; padding-left:10px;}
+.view-remove{color: #8E8E8E; text-align: left;padding-right: 10px;}
+.view-remove a{color: #8E8E8E; text-decoration:none;}
+.view-remove a:hover{color:#8E8E8E; text-decoration:none;}
+#admin-permissions{margin-top:20px;color: black;}
+#admin-permissions td{text-align:right;}
+#permissions{margin-top:20px; margin-bottom:40px; font-size:12px;}
+#addpermissions{margin-top:20px; margin-bottom:20px; font-size:12px;}
+.remove{color:#999999;}
+.remove a{color:#999999; text-decoration:none;}
+#admin-name{font-size:12px; font-weight:bold; font-style:italic; margin-bottom:15px;}
+#admin-notfound{font-size:12px;}
+#superadmin td{height:23px;}
+#superadmin a:hover{text-decoration:underline;}
+#userlist{width:89%; font-size:11px; margin-top:20px; border-spacing:0px; border:none; border-collapse:collapse;}
+#userlist th{background-color:#f1f1f1; padding-top:5px; padding-bottom:5px; padding-left:10px; border-spacing:0px; border:none; border-collapse:collapse; font-size:11px;padding-right: 10px;}
+#userlist td{font-size:11px; padding-left:10px;color: #383838;}
+#userlist th a{color: #383838; text-decoration:none;}
+
+#sapendinglist{width:89%; font-size:11px; margin-top:3px; border-spacing:0px; border:none; border-collapse:collapse;}
+#sapendinglist tr th{background-color:#f1f1f1; padding-top:5px; padding-bottom:5px; padding-left:10px; border-spacing:0px; border:none; border-collapse:collapse; font-size:11px;}
+#sapendinglist td{font-size:12px; padding-left:10px;color: #383838;}
+#sapendinglist th a{color: #383838;text-decoration:none;}
+
+#superadminqlist{width:100%; font-size:11px; margin-top:20px; border-spacing:0px; border:none; border-collapse:collapse;}
+#superadminqlist th{background-color:#f1f1f1; padding-top:10px; padding-bottom:5px; padding-left:10px; border-spacing:0px; border:none; border-collapse:collapse; font-size:13px;}
+#superadminqlist td{font-size:12px; padding-left:10px;}
+#superadminqlist th a{color: #383838;text-decoration:none;}
+
+.bulkmergeright{font-size: 12px; font-weight: bold; margin-top: 5px;margin-left:47px;}
+#mergelist{width:89%; font-size:12px; margin-bottom:12px;margin-left:27px; border-spacing:0px; border:none; border-collapse:collapse;margin-top: -20px;}
+#mergelist tbody th{background-color:white;  border-spacing:0px; border:none; border-collapse:collapse; font-size:12px;}
+#mergelist thead th{background-color:white;  border-spacing:0px; border:none; border-collapse:collapse; font-size:12px;}
+#mergelist td{font-size:12px; padding-left:10px;}
+#mergelist th a{color: #383838;text-decoration:none;}
+#mergelist td a{text-decoration:none;}
+
+#retailerlist{width:89%; font-size:12px; margin-top:20px; border-spacing:0px; border:none; border-collapse:collapse;}
+#retailerlist th{background-color:#f1f1f1; padding-top:5px; padding-bottom:5px; padding-left:10px; border-spacing:0px; border:none; border-collapse:collapse; font-size:11px;}
+#retailerlist td{font-size:12px; padding-left:10px;color: #383838;}
+.pagination a{color: #383838;}
+.pagination{color: #383838;}
+#retailerlist td a{}
+#retailerlist th a{color: #383838;text-decoration:none;}
+#pagination{font-size:11px; margin-top:20px;}
+#pagination a:hover{text-decoration:underline;}
+.delete-box{position:absolute;display:none; }
+.update-box{position:absolute;margin-left: 400px;margin-top: 100px; }
+#delete-body {width:150px;	height:100px; padding:12px; background-color:#FFF; border:1px solid #999999;font-weight:normal;font-size:13px;}
+#update-body {width:180px;	height:100px; padding:10px; background-color:#FFF; border:1px solid #999999;font-weight:normal;font-size:13px;}
+.profile-box{position:absolute;display:none;margin-top:20px; margin-left:731px;z-index:1;}
+.my-list-remove-box{position:absolute;display:none;margin-top:20px; margin-left:400px;z-index:1;}
+#my-list-remove-body {width:195px;	height:95px; padding-left:10px; padding-right:10px; padding-bottom:10px; padding-top:15px; background-color:#FFF; border:1px solid #999999;font-weight:normal;font-size:13px;}
+.remove-my-account-box{position:absolute;display:none;margin-left:650px;margin-top:40px;z-index:1;border: 6px solid #666;border-radius: 8px;}
+#remove-my-account-body {width:405px; height:213px; padding-left:10px; padding-right:10px; padding-bottom:10px; padding-top:15px; background-color:#FFF; border:1px solid #999999;font-weight:normal;font-size:13px;}
+#shareit-blank {height:0px;}
+#shareit-url {height:50px;	text-align:center;}
+#shareit-url input.field{width:300px; height:26px;border:none; outline:none;padding:7px 5px 0 5px;margin:3px auto;font-size:11px;}
+#shareit-icon  {height:20px;}
+#shareit-field{width:200px; height:20px; border:1px solid #999999;}
+#shareit-icon ul {list-style:none;	margin:0;	padding:0 0 0 8px;}
+#shareit-icon ul  li{padding:0 2px;}
+#shareit-icon ul  li img{border:none;}			
+.shareit{margin-top:5px;height:20px;}
+.shareheading{font-size:15px;font-weight:bold;margin-bottom:10px;}
+#user-right{float:right; margin-right:200px;margin-top: -380px;}
+#user-right td{text-align:left;}
+#superadmin{font-size: 12px;}
+#show{padding-top:63px; line-height:25px;}
+#showwin{padding-top:10px; line-height:15px;}
+.show{padding-top:10px; line-height:25px;}
+#show-permission{padding-top:50px;}
+
+#update{padding-top:20px; margin-left:115px;}
+#merge{font-size:11px; padding-top:20px;}
+#retailer-winetab{width:100%;}
+#retailer-winetab td{font-size:11px; line-height:20px;}
+#retailer-winetab td a{color: #383838;}
+#retailer-images{width:200px;}
+#retailer-newimage{width:400px; float:right; margin-top:30px; margin-right:100px;}
+#newimage{margin-left:85px; margin-top:10px;}
+#newbulk{margin-left:15px; margin-top:10px;color:#1b6bd6;font-weight:lighter;font-size:11.5px;}
+.filename{margin-left:65px;}
+#addwine td{text-align:right;}
+#addwine-left{float: left; width:500px;}
+#addwine-right{width:350px; float:right; margin-right:100px;}
+#addwine-rightno{width:300px; float:right; margin-right:100px;}
+#result{margin-left:145px;}
+#select{ margin-left:50px;}
+#upload{margin-left:27px; width: 650px;margin-top:-10px;line-height: 1.3;}
+#inventory{margin-top:20px; padding-bottom:10px;}
+.red{color:#EE0000;}
+.white{color:#FFFFFF;}
+.black{color:#000000;}
+.leftstar{float:left; padding-left:5px; color:#999999;}
+.redstar{float:left; padding-left:7px; color:red;padding-top: 7px;}
+.left-text{float:left;}
+.gray{color:#999999;}
+.gray a{color:#999999;}
+#addwinedivsa {
+	display:none;
+	width:320px;
+	height:270px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#addwinedivsa div{
+	background-color:#fff;
+}
+#addinventory a{ float:left; color:#999999; font-size:13px; text-decoration:none; }
+#searchlink{padding-bottom:20px;padding-left: 7px;}
+#searchlink a:hover{text-decoration:underline; }
+.adduserbysu{background-image:url(/assets/searchnew.png);background-repeat:no-repeat;width: 60px;height: 24px; border:none; padding-bottom:8px; float:left;}
+#retailer-winetab{border-spacing:0px; border:none; border-collapse:collapse;}
+#retailer-winetab th{background-color:#f1f1f1; padding-top:5px; padding-bottom:5px; padding-left:10px; border-spacing:0px; border:none; border-collapse:collapse; font-size:11px;}
+#retailer-winetab th a{color: #383838;}
+#retailer-winetab td{padding-left:10px;color: #383838;}
+#wine-addwinediv td{text-align:right;}
+#wine-result{margin-left:120px; margin-top:20px;}
+.normal{font-weight:lighter;}
+#backtopanel a{ font-size:12px; color:#999999; text-decoration:none; }
+.view-title{color:#999999; font-size:11px;}
+.view-title a{color:#999999; text-decoration:none;}
+.view-title a:hover{color:#999999; text-decoration:none;}
+.selected{font-weight:bold; text-decoration:none;}
+#admin-stats{margin-left:20px;}
+#retailerpage{font-size:11px; width:89%;color: #383838;}
+#userpage{font-size:11px; width:89%;color: #383838;}
+#winepage{font-size:11px; width:89%;color: #383838;}
+#superadmin-addretailer{}
+#sorry{width:89%; padding-top:20px; text-align:center;}
+#facecolor a{color:#425597;}
+#twitcolor a{color:#55cafd;}
+.nounderline a{text-decoration:none;}
+
+
+#Nav ul{list-style-type:none;}
+/*
+
+conflict with bootstrap style
+
+.dropdown .NavRight a{width:250px; float:right; color:#FFFFFF; font-size:14px; margin-top:9px; text-decoration:none;text-align: right;padding-right: 24px;}
+.dropdown .NavRight a:hover{color:#c3c3c3;}
+*/
+ul.dropdown{margin: 0;padding: 0px 0px 0px 12px;position: relative; background-image:url(/assets/nav.jpg);background-repeat:repeat-x; height: 40px }
+
+ul.dropdown li{ font-weight: bold; float: left; zoom: 1; background: #000; color:#fff; }
+ul.dropdown a:hover{ color: #fff; }
+ul.dropdown a:active{ color: #ffa500; }
+ul.dropdown li a{ display: block; padding: 9px 16px; color: #fff; text-decoration: none;font-size:14px; font-weight:bold;}
+ul.dropdown li:last-child a { border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover,ul.dropdown li:hover{ background: #fff; color: black; position: relative; margin-top:2px; }
+ul.dropdown li.hover a{ color: #222222; margin-top:0px; border:none; }
+
+ul.dropdown ul{ width: 180px; visibility: hidden; position: absolute; top: 100%; margin-top:0px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1;	}
+ul.dropdown ul li{ font-weight: normal; background: #fff; color: #000;  float: none; height:30px; }
+ul.dropdown ul li.hover{margin-top:0px; background:#fff; border:none;}									  
+ul.dropdown ul li a{ border: none; width: 100%; display: inline-block; font-weight:normal; font-size:13px; } 
+ul.dropdown ul li.hover a{border:none; }
+ul.dropdown ul.sub_menu{padding:0px;}
+ul.dropdown ul li ul{ width: 150px; margin-left: 170px; padding-left:20px; visibility: hidden; position: absolute; top: 100%; margin-top: -40px; -moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:-1; background: white;}
+
+#retailerwinepage{font-size:11px;}
+.alert-box{position:absolute;display:none;margin-top:200px; margin-left:400px;z-index:1;}
+#alert-body {width:200px;height:100px; padding:20px; background-color:#FFF; border:1px solid #999999;font-weight:normal;font-size:13px; text-align:left;}
+.editlink{font-weight:normal; color:#000000; font-size:11px;}
+.editlink a{font-weight:normal; color:#000000; font-size:11px;}
+#linkcolor{font-weight:normal; color:#777777; font-size:12px; text-decoration:none;}
+.addinventlink{display:none;}
+.addinventlink a{color:#777777; text-decoration:none;}
+#mergeselected{color:#777777;}
+#waretailerpage{font-size:11px;}
+.reporthideshow{ float:left; color:#808080; font-size:13px; visibility:hidden; }
+.reporthideshow a{ color:#808080; font-size:11px; text-decoration:none;}
+.reporthideshow a:hover{ text-decoration:underline;}
+
+#addwinedivpopup {
+	display:none;
+	width:520px;
+	height:770px;
+	padding:10px;
+	background-color:#FFF;
+	border:6px solid #666;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	font-weight:bold;
+}
+#addwinedivpopup div{
+	background-color:#fff;
+}
+#addwinedivpopup a{
+	text-decoration: none;
+	color:#777777;
+}
+#addwinedivpopup a:hover {
+	text-decoration: underline;
+	color:#777777;
+}
+#homepagecenter{padding-top:40px;}
+#homeheading{font-size:24px; font-weight:bold; padding-top:10px; width:250px; text-align:left;}
+#homepagebelow{padding-top:30px;}
+#storesdetail ul{list-style-type:none; width:250px;}
+.headinghome{font-weight:bold; line-height:25px;}
+#signupright{float:right; padding-top:30px;}
+#signupright a{font-size:13px; font-weight:bold;}
+
+.citydrop-box{position:absolute;margin-left: 684px;margin-top: 37px; display:none; z-index: 1; }
+#citydrop-body {padding: 10px 10px 0px 10px; background-color:#FFF;font-weight:normal;font-size:13px; z-index:1;}
+.changelocation{font-weight:bold; font-size:14px; line-height:25px;padding-left: 2px}
+#changelocationtable{width:100%;border-spacing:0px;}
+#changelocationtable a{text-decoration:none; font-size: 12px;}
+.to li{list-style-type:none; line-height:22px;}
+.to li a{text-decoration:none;}
+.to ul{margin:5px;padding-top: 10px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;}
+.to p{line-height: 25px;}
+.to a{text-decoration: none;}
+.to a:hover{text-decoration: underline;}
+.suto li{list-style-type:none; line-height:22px;margin-top:1px; background-color:white;}
+.suto li a{text-decoration:none;}
+.suto ul{margin-top:-4px;padding-top: 0px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;margin-bottom:-5px; margin-left: 0px;}
+.twitter {
+  background: url(/assets/twitter.png) no-repeat top left;
+  border: none;
+  width: 75px;
+  height: 22px;
+  text-indent: -3000px;
+}
+/*.citydropdown-box{position:absolute; margin-left:3px; margin-top:-4px; }
+#citydropdown-body {width:320px; margin-left:-13px; padding:10px; background-color:#FFF;font-weight:normal;opacity: .9;font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1;}
+*/
+.citydropdown-box{position:absolute; margin-left:3px; margin-top:-4px; }
+#citydropdown-body {width:320px; margin-left:-13px; padding:10px; background-color:#FFF;font-weight:normal;opacity: .9;font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1;}
+
+.suwinedropdown-box{position:absolute; margin-left:1px; margin-top: -7px; }
+/*.winenamelist{margin-bottom:0px;margin-left:-3px;font-size:12px;}*/
+#suwinedropdown-body {width:413px; padding:10px; background-color:#FFF;font-weight:normal;font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1; text-align:left;}
+
+.suproducerdropdown-box{position:absolute; margin-left:1px; margin-top: -7px; }
+/*.producerlist{margin-bottom:5px;margin-left:-5px;font-size:12px;}*/
+#suproducerdropdown-body {width:183px; padding:10px; background-color:#FFF;font-weight:normal;font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1; text-align:left;}
+
+.headersearchdropdown-box{position:absolute; margin-left: 14px; }
+#headersearchdropdown-body {width:328px; margin-top:2px;padding:10px 4px 10px 4px; background-color:#FFF;font-weight:normal; font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1;}
+.cityheadersearchdropdown-box{position:absolute; margin-left:3px; }
+#cityheadersearchdropdown-body {width:141px; margin-top:2px; margin-left:589px; padding:10px; background-color:#FFF;font-weight:normal; font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1;}
+
+.indexpage-spinner{position:absolute; margin-left:100px;margin-top:-4px;}
+.indexpage-nofound{position:absolute; margin-left:96px; margin-top:-5px;}
+#zipcodenotfound{position:absolute; margin-left:96px; margin-top:-5px;}
+.loginwindow{color: #999;font-size: 11px;}
+#errorExplanation {border: 0px solid red;}
+#errorExplanation h2 {display:none;}
+#errorExplanation p {
+  color: red;
+  margin-bottom: 0;
+  margin-top: 4px;
+  padding: 5px;
+}
+#errorExplanation ul{
+	margin: 0px;
+}
+#errorExplanation ul li {
+	font-size: 13px;
+	list-style-type: none;
+	font-weight: bold;
+}
+.tophead{padding-top:15px;}
+#indicator{position:absolute; opacity:0.8; margin-left: 200px;margin-top: 100px; display:none; }
+#spinneruploadimg{position:absolute; opacity:0.8; margin-left: 35px;margin-top: -24px; display:none; }
+#indicatorpage{position:absolute; opacity:0.8; margin-right: 100px; display:none; }
+.addbold{font-weight: bold; color: #000;}
+.addbold a{font-weight: bold; color: #000;}
+#wineindicator{position:absolute; opacity:0.8; margin-left: 550px;margin-top: 200px; display:none; }
+#winesummaryindicator{position:absolute; opacity:0.8; margin-left: 320px;margin-top: 310px; display:none; }
+#winesummary_nearby_indicator{position:absolute; opacity:0.8; margin-left: 320px;margin-top: 30px; display:none; }
+#winesummary_online_indicator{position:absolute; opacity:0.8; margin-left: 320px;margin-top: 30px; display:none; }
+#winesummary_rest_indicator{position:absolute; opacity:0.8; margin-left: 320px;margin-top: 30px; display:none; }
+.checkboximage{background-image:url(/assets/checkbox-checked.png); background-repeat:no-repeat; background-position:left;cursor:pointer;}
+.checkboxuncheckedimage{background-image:url(/assets/checkbox_unchecked.jpg); background-repeat:no-repeat; background-position:left; cursor:pointer;margin-left: 1px;}
+#reviewpopup{width:250px; height:120px; background-color:#fff;position:absolute; }
+.dropdownoption{ margin-top:20px; margin-bottom:10px; font-size:12px;}
+.dropdownoption select{font-size:11px;}
+.commentdetail{list-style-type:none;text-align: justify;margin-top:8px;}
+.commentdate{color:#999999; margin-top:1px;float: left;}
+.commentdate span{color:#999999; text-decoration:none;display:none;}
+.commentdate a{color:#999999; text-decoration:none;}
+.commentdate a:hover {color:#999999;text-decoration: underline;}
+.hiderow{display:none;}
+.showrow{display:block;}
+#summview {color:#808080; font-weight:normal; font-size:14px; margin-top:30px;}
+#summview a{color:#808080;text-decoration:none;}
+.boldblack{color:black; font-weight:bold;}
+.sumoptionalvote{display:none;height:60px;position:absolute; width:80px; padding:10px; background-color:#fff;border:1px solid #e1e1e1; margin-top:-30px; margin-left:40px;color:#808080; font-weight:normal;}
+.sumoptionalvote a {font-size: 11px; color:#808080;text-decoration:none;}
+.sumoptionalvoteprice{display:none;height:60px;position:absolute; width:90px; padding:10px; background-color:#fff;border:1px solid #e1e1e1; margin-top:-30px; margin-left:40px;color:#808080; font-weight:normal;}
+.sumoptionalvoteprice a {font-size: 11px; color:#808080;text-decoration:none;}
+.dollar{font-size: 14px; float:left;font-weight: bold;}
+#wineimage_uploadindicator{position:absolute; opacity:0.3;display:none; }
+#winesummary_header_indicator{position:absolute; opacity:0.3; margin-left: 340px;margin-top: -70px; display:none; }
+#winesummary_edit_indicator{position:absolute; opacity:0.7; margin-left: 250px; display:none; }
+#winesummary_expert_indicator{display:none; position:absolute; opacity:0.7; margin-left: 0px; margin-top: -120px; display:none; }
+#winesummary_unscrewed_indicator{position:absolute; opacity:0.7; margin-left: 80px;margin-top: -40px; display:none; }
+.winesummary_unscrewed_rpy{position:absolute; opacity:0.7;margin-left: 80px;margin-top: -60px; display:none; }
+#signupdivcallback {display:none;width:400px;padding:10px;background-color:#FFF;border:6px solid #666;-moz-border-radius:8px;-webkit-border-radius:8px;font-weight:bold;}
+#signupdivfacebook {display:none;width:400px;padding:10px;background-color:#FFF;border:6px solid #666;-moz-border-radius:8px;-webkit-border-radius:8px;font-weight:bold;}
+#rtladmin_addimg{position:absolute; opacity:0.8; margin-left: 100px; display:none; }
+#signup_addimg{position:absolute; opacity:1.9; margin-left: 20px; display:none; margin-top:-130px;}
+#rtladmin_addbulk{position:absolute; opacity:0.8; margin-left: 120px;margin-top: 30px; display:none; }
+.rtladmin_rmvimg{position:absolute; opacity:0.4; margin-left: 35px;margin-top: 40px; display:none; }
+#addwine_indicator{position:absolute; opacity:0.6; margin-left: 90px;margin-top: -35px; display:none; }
+#addwine_indicator_lod{position:absolute; opacity:0.6; margin-left: 90px;margin-top: -35px; display:none; }
+#bulk_desc{background-color: #F1F1F1;padding: 10px;width: 400px;margin-top: 17px;}
+#bulk_desc P{font-weight: bold;}
+#bulk_desc ul li{display: list-item;list-style-type: disc;}
+#bulkdetaillink{padding-bottom:20px;padding-left: 7px;margin-top:40px;}
+#bulkdetaillink P{font-weight: bold;font-size:18px;}
+#bulkdetaillink ul{margin-top:5px;}
+#bulkdetaillink ul li{display: list-item;list-style-type: decimal;margin-top:32px;}
+#bulkdetaillink ul P{font-weight: bold;font-size:14px; margin-left: -20px;margin-top: 15px;}
+#bulkdetaillink ul li ul li{display: list-item;list-style-type: disc; margin-top:8px;}
+#selectedFilters li{display: inline; cursor: pointer; color: #222222;}
+#selectedFilters li a{display: inline; cursor: pointer; font-weight: bold;}
+#selectedFilters{display: inline; margin: 0px 0px 0px 1px;}
+.blog_filter {margin-top: 50px;}
+.my-list-div{padding: 15px;background-color: #F6F6F6;float: right;width: 210px;-moz-border-radius:6px;-webkit-border-radius:6px;border-width: .1em;}
+.my-list-div a{text-decoration:none;}
+#my-list-add-wine{display:none;min-width:400px;min-height:500px;padding:20px;background-color:#FFF;border:6px solid #666;-moz-border-radius:8px;-webkit-border-radius:8px;}
+.my-list-delete-review-box{position:absolute;display:none;margin-top:85px; margin-left:120px;z-index:1;}
+.my-list-send-box-edit{border: 1px solid #999;height: 20px;color: #999;}
+.header-select-text{color: #000;font-weight: bold;}
+#likeit_text{ color: #222222;}
+.typelabeltext{font-weight: bold;}
+#terms{ font-family: "arial"; font-size: 16px; font-weight: bold; color: #222; margin-top: 40px; margin-left: 15px;}
+#termsub{ font-family: "arial"; font-size: 13px; color: #222; margin-top: 10px; margin-left: 15px;}
+#termsdetail{ font-family: "arial"; font-size: 13px; color: #222; margin-top: 5px; margin-left: 15px;}
+#contact{font-family: "arial"; font-size: 13px; color: #555; margin-top: 20px; margin-left: 15px;}
+#contact a{font-family: "arial"; font-size: 13px; color: #555;}
+#mylist_total{font-size: 14px;}
+#mylist_total.span11{
+	margin-left: 0px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+/*#my-rtl-from-wine{display:none;min-width:250px;min-height:400px;padding:20px;background-color:#FFF;border:6px solid #666;-moz-border-radius:8px;-webkit-border-radius:8px;}
+*/#unreview_title:focus {
+    outline: none;
+    border: 1px solid #c5b71f;
+    box-shadow: 0px 0px 8px #c5b71f;
+    -moz-box-shadow: 0px 0px 8px #c5b71f;
+    -webkit-box-shadow: 0px 0px 8px #c5b71f;
+}
+#unreview_text:focus {
+    outline: none;
+    border-left: 1px solid #c5b71f;
+    border-right: 1px solid #c5b71f;
+    border-bottom: 1px solid #c5b71f;
+    border-top: 1px solid #c5b71f;
+    box-shadow: 0px 0px 8px #c5b71f;
+    -moz-box-shadow: 0px 0px 8px #c5b71f;
+    -webkit-box-shadow: 0px 0px 8px #c5b71f;
+}
+#unreview_text{
+	border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+}
+.per_text{font-weight: bold;text-decoration: none;font-style: italic;}
+.view-remove a:hover  {text-decoration: underline;}
+#after_submit_wine_modal{display:none;min-width:240px;min-height:210px;padding:20px;background-color:#FFF;border:6px solid #666;-moz-border-radius:8px;-webkit-border-radius:8px;}
+#newVarifiedRetailerSignUpForm input{margin-top:-3px;}
+#newVarifiedRetailerSignUpForm select{margin-top:-3px;}
+#forgotPasswordEmailSentDiv h2{font-size: 24px;}
+#forgotPasswordEmailSentDiv p{font-size: 14px;}
+#admin-profile{font-size: 12px;}
+#search_city{color: #8e8e8e;}
+#search_name{color: #8e8e8e;}
+#deleteAccountForm p{line-height: 25px;}
+#reportSuccessDiv{margin-top: 35px; margin-left: 20px;}
+.pos_fixed{position: fixed;}
+.pos_absolute{position: absolute; bottom: 10px; }
+#unscrewed_rev{padding-top: 10px;}
+#cancelphoto{
+}
+#showprocessing{
+	width: 185px;
+	height: 2000px;
+	position: absolute;
+	opacity: 0.8;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	background-color: white;
+}
+#showsearchwineprocessing{
+	position: absolute;
+	opacity: 0.8;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	background-color: white;
+}
+.system-ajax-loader{}
+.wine-ajax-loader{}
+.wine-ajax-loader-head{}
+.more-collapse{display: none;}
+#system_message{
+	font-weight: bold;
+}
+.form-horizontal .control-label.ret_label{
+	padding-top: 5px;
+}
+.blog_collapse {height: 300px; overflow: hidden;}
+.blog_options{
+	font-size: 11px;
+	color: #808080;
+	display: inline; 
+	padding: 0px;
+	margin-left: 0px;
+}
+.blog_options li{
+	display: inline;
+}
+.SearchStore.span11{
+	margin-left: 0px;
+}
+#print-area{
+	float: left;
+}

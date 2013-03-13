@@ -21,5 +21,16 @@ Blog::Application.configure do
 
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
+
+  # Do not compress assets
+  config.assets.compress = false
+
+  config.serve_static_assets = true
+
+  # Expands the lines which load the assets
+  config.assets.debug = true
+  config.plugins = []
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
 end
 

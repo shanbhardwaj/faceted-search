@@ -1,28 +1,66 @@
-<h1>Listing wines</h1> <h2> Total - <%= @search.group(:wine_group_str).total %> </h2>
+<table align="center" cellspacing="10" style = "width:70%">
+  <tr>
+    <td colspan="2">
+      <h1>Listing wines</h1> <h2> Total - <%= @search.group(:wine_group_str).total %> </h2>
 <%= form_tag wines_path, :method => :get do %>
-  <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
-<table>
+    <%= link_to 'Next Page', :page => (params[:page])? params[:page].to_i + 1 : 2, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year], :sort => params[:sort], :order => params[:order] %>
+<div class="sort_by pull-right">
+      <div class="navbar">
+        <ul class="nav pull-right">
+          <li><a href="#" data-toggle="modal">Sort by:</a></li>
+          <li id="sortby_drop">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span id = "wine_sort_element">
+              <% if params[:sort].nil? or params[:sort] == "value" %>
+                Best Value 
+              <% elsif params[:sort] == "expert_rating" %>
+                Experts
+              <% elsif params[:sort] == "price" %>
+                Price
+              <% end %>
+            </span> <b class="caret"></b></a>
+            <div class="dropdown-menu">
+              <ul>
+                <li>
+                    <%= link_to "Best Value", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year], :sort => "value", :order => (((params[:sort].present? and params[:sort] == "value") or params[:sort].nil?)? "desc" : "asc") %>
+                 </li>
+                <li>
+                  <%= link_to "Experts", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year], :sort => "expert_rating", :order => ((params[:sort].present? and params[:sort] == "expert_rating")? "desc" : "asc") %>
+                 </li>
+                <li>
+                  <%= link_to "Price", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year], :sort => "price", :order => ((params[:sort].present? and params[:sort] == "price")? "desc" : "asc") %>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+</td>
+</tr>
   <tr>
-    <td>
+    <td valign="top">
 <div id="facets">
-  <h3>Wines by Retailer Type</h3>
+  <div class="span14 well wine_filter">
+  <div class="span2 filter_type">Wines by Retailer Type</div><br/>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @retailerType.facet(:retailer_type).rows %>
       <li>
         <% if params[:retailer_type].blank? %>
-          <%= link_to row.value, :retailer_type=> row.value, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= row.count %>)
+          <%= link_to row.value, :retailer_type=> row.value, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %> (<%= row.count %>)<br/>
         <% else %>
           <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> nil, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Distance</h3>
+</div>
+  <div class="span2 filter_type">Wines by Distance</div>
+  <div class="span2 filter_name">
   <ul>
   <% if params[:distance].present? %>
       <strong><%= params[:distance] %></strong> (<%= @search.group(:wine_group_str).total %>) (<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => nil, :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]  %>)
@@ -54,10 +92,11 @@
     <% end %>
   <% end %>
   </ul><br/>
-
+</div>
   <!-- Wine Price not handled yet -->
 
-  <h3>Wines by Wine Type</h3>
+  <div class="span2 filter_type">Wines by Wine Type</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:wine_type).rows %>
       <li>
@@ -69,8 +108,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Expert Rating</h3>
+</div>
+  <div class="span2 filter_type">Wines by Expert Rating</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:expert_rating).rows %>
       <li>
@@ -82,8 +122,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Reviews</h3>
+</div>
+  <div class="span2 filter_type">Wines by Reviews</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:review).rows %>
       <li>
@@ -95,8 +136,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Varietal</h3>
+</div>
+  <div class="span2 filter_type">Wines by Varietal</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:varietal).rows %>
       <li>
@@ -108,8 +150,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by White Varietal</h3>
+</div>
+  <div class="span2 filter_type">Wines by White Varietal</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:white_varietal).rows %>
       <li>
@@ -121,8 +164,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Red Varietal</h3>
+</div>
+  <div class="span2 filter_type">Wines by Red Varietal</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:red_varietal).rows %>
       <li>
@@ -134,21 +178,23 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Champagne Varietal</h3>
+</div>
+  <div class="span2 filter_type">Wines by Champagne Varietal</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:champagne_varietal).rows %>
       <li>
         <% if params[:champagne_varietal].blank? %>
-          <%= link_to row.value, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => row.value, :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
+          <%= link_to ((row.value.present?)? row.value : "None") , :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => row.value, :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year]%> (<%= row.count %>)
         <% else %>
           <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => nil, :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>)
         <% end %>
       </li>
     <% end %>
   </ul><br/>
-    
-  <h3>Wines by Region</h3>
+    </div>
+  <div class="span2 filter_type">Wines by Region</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:region).rows %>
       <li>
@@ -160,8 +206,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Sub Region</h3>
+</div>
+  <div class="span2 filter_type">Wines by Sub Region</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:sub_region).rows %>
       <li>
@@ -173,8 +220,9 @@
       </li>
     <% end %>
   </ul><br/>
-
-  <h3>Wines by Producer</h3>
+</div>
+  <div class="span2 filter_type">Wines by Producer</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:producer).rows %>
       <li>
@@ -186,8 +234,9 @@
       </li>
     <% end %>
   </ul>
-
-  <h3>Wines by Size</h3>
+</div>
+  <div class="span2 filter_type">Wines by Size</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:bottlesize).rows %>
       <li>
@@ -199,9 +248,10 @@
       </li>
     <% end %>
   </ul><br/>
-  
+  </div>
 
-  <h3>Wines by Year</h3>
+  <div class="span2 filter_type">Wines by Year</div>
+  <div class="span2 filter_name">
   <ul>
     <% for row in @search.facet(:year).rows %>
       <li>
@@ -214,39 +264,69 @@
     <% end %>
   </ul><br/>
 </div>
-
+</div>
+</div>
 </td>
-<td valign="top">
-<table>
-  <tr align="left">
-    <th>Wine name</th>
-    <th>region</th>
-    <th>Varietal</th>
-    <th>Year</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @wines.each do |wine| %>
-  <tr>
-    <td><%= wine.wine_name %></td>
-    <td><%= wine.region%></td>
-    <td><%= wine.varietal %></td>
-    <td><%= wine.year %></td>
-    <td><%= link_to 'Show', wine %></td>
-    <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
-    <td><%= link_to 'Destroy', wine, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Wine', new_wine_path %>
-
-<%= link_to 'Next Page', :page => (params[:page])? params[:page].to_i + 1 : 2, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year] %>
-
+<td valign="top" style="width:80%;">
+<% @search.group(:wine_group_str).groups.each do |ledgers| %>
+  <% wine = ledgers.results[0].wine %>
+    <!-- Wine Detail Row Start --> 
+      <div class="span6 well wine_detail_div">
+        <div class="media">
+          <div class="span" style="margin-left: 0px; margin-right: 16px;">
+            <table>
+              <tr>
+                <td width="106px" style="vertical-align: top"><div align="center" style="vertical-align: middle; max-height: 106px; width: 106px;" class="find_wine_img"><img src="/assets/pic5.png" /></div></td>
+              </tr>
+            </table>
+          </div>
+          <div class="media-body">
+            <div class="wine_name"><%=link_to wine.wine_name, wine_path(:id =>wine.id) %></div>
+            <div class="wine_detail"><%= wine.wine_type %> Wine, <%=wine.varietal %> from <%= (wine.sub_region.present?)? wine.sub_region + ", " : ""%> <%= wine.region %></div>
+            <% if wine.expert_points.present? %>
+            <div class="navbar">
+              <ul class="nav store_value_drop pull-left" style ="float:none; width:100%">
+                <li class="dropdown_store" style = "float:none;">
+                  <span class="label label_pt"><a href="/wines/10484"><%=wine.expert_points%></a></span>
+                  <ul class="dropdown-main-unscrewed">
+                    <li>
+                      <div>
+                        <div class="expert_score_value"><strong>Expert Score: </strong><%=wine.expert_points%>  pts (avg)</div>
+                        <ul>
+                         <% wine.wine_reviews.each do |rev| %>
+                          <li><div class="span2">
+                            <div class="expert_name_drpdwn"><%= rev.expert + " - " + rev.rating.to_s %></div>
+                          </div></li>
+                        <% end %>
+                      </ul>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <% end %><br/>
+            <div class="wine_price_label"><span class="wine_price">$ <%= ledgers.results[0].price%></span>  at <span><%=ledgers.results[0].retailer.retailer_name %></span></div>
+            <div style="margin-left: -1px;"><span class="label_winepage">
+              <img src='<%= ledgers.results[0].value_img %>' >
+            </span></div>
+            <div class="rate_wine"><a href="#">Rate It</a></div>
+            <div class="add_links" style="visibility: hidden;">
+                <span class="add_list"><a href="#addwinediv"  onclick="return false;">Add to My List</a></span>
+                <span class="report_out"><a href="#" onclick="return false;">Report In/Out</a></span>
+                <span class="new_price"><a href="#" onclick="return false;">New Price</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+  <% end %>
+<div class="pagination_wine span6">
+  <div align="center" id="winepaggi"  class ="hiderow" style="position:absolute;margin-left:320px;margin-top:-40px"><img src="/assets/newajax-loader.gif"/></div>
+  <div align="center" id="findwinepage">
+<%#= link_to 'New Wine', new_wine_path %>        
+<%= link_to 'Next Page', :page => (params[:page])? params[:page].to_i + 1 : 2, :retailer_type=> params[:retailer_type], :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year], :sort => params[:sort], :order => params[:order] %>
+</div>
+</div>
 </td>
 </tr>
 </table>

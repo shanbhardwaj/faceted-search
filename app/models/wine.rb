@@ -71,4 +71,16 @@ class Wine < ActiveRecord::Base
   #   end
   # end
 
+
+  def expert_points
+    rating = nil
+    total = 0
+    if self.wine_reviews.count > 0
+      self.wine_reviews.each do |rev|
+          total += rev.rating if rev.rating.present?
+        end
+        rating = (total.to_f/self.wine_reviews.count).round(2)
+    end
+    return rating
+  end
 end

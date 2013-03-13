@@ -8,9 +8,16 @@ class WinesController < ApplicationController
     page = (params[:page])? params[:page] : 1
   @search = RetailerLedger.search do
     group :wine_group_str do
-        truncate
+      order_by(:price, :asc)
+      truncate
     end
-    fulltext params[:search]
+    if params[:sort].present?
+      order = ((params[:order].nil?)? "asc" : params[:order])
+      order_by(params[:sort], order)
+    else
+      order_by(:value,:asc)
+    end
+   fulltext params[:search]
     if params[:distance].blank? and params[:retailer_type].blank?
       f = any_of do
         with(:location).in_radius(lat, lng, 50)
@@ -55,7 +62,7 @@ class WinesController < ApplicationController
 
       facet :varietal, :limit => 5
       facet :producer, :region, :sub_region, :wine_type, :white_varietal, :red_varietal,:champagne_varietal, :year, :review, :limit => 5
-    facet :bottlesize, :exclude => size_filter
+    facet :bottlesize, :exclude => size_filter, :limit => 5
     facet(:expert_rating) do
       row(95..100) do
         with(:expert_rating).greater_than_or_equal_to(95.0)
@@ -291,11 +298,11 @@ class WinesController < ApplicationController
     end
   end
 end
-
-   @wines = []
+   # @wines = []
   # @wines = @search.results.wines
-    wine_ids = @search.group(:wine_group_str).groups.map { |p| p.value.split(",")[0].to_i }
-    @wines = Wine.where(:id => wine_ids)
+    # wine_ids = @search.group(:wine_group_str).groups.map { |p| p.value.split(",")[0].to_i }
+    
+    # @wines = Wine.where(:id => wine_ids).order('FIELD (id,'+wine_ids.to_s.gsub("]","").gsub("[","")+')')
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @wines }

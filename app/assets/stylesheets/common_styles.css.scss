@@ -1,0 +1,32 @@
+.citydrop-box{position:absolute;margin-left: 684px;margin-top: 37px; display:none; z-index: 1; }
+#citydrop-body {
+	padding:10px; 
+	background-color:#FFF;
+	border: 1px solid #fff;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+}
+.changelocation{font-weight:bold; font-size:14px; line-height:25px;padding-left: 2px}
+#changelocationtable{width:100%;border-spacing:0px;}
+#changelocationtable a{text-decoration:none; font-size: 12px;}
+.headersearchdropdown-box{position:absolute; margin-left:3px; }
+#headersearchdropdown-body {width:348px; padding:10px 4px 10px 4px; background-color:#FFF;font-weight:normal; font-size:13px;-moz-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; -webkit-box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; box-shadow: 2px 5px 8px #DCDCDC,-2px 5px 8px #DCDCDC; z-index:1;}
+.to li{list-style-type:none; line-height:22px;}
+.to li a{text-decoration:none;}
+.to ul{margin:5px;padding-top: 10px;padding-left: 0px;padding-right: 0px;padding-bottom: 0px;}
+.to p{line-height: 25px;}
+.to a{text-decoration: none;}
+.to a:hover{text-decoration: underline;}
+#profile-body{
+	padding: 10px;
+}
+ul.nav li.dropdown:hover ul.dropdown-main{
+    display: block;    
+}
+.current_city_div{
+	margin-top: 16px;
+}
+.currentcitydrop-box ul li:hover {
+	background-color: #ffffff;
+}

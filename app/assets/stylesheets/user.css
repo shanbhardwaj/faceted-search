@@ -1,0 +1,75 @@
+.head_signup{
+	font-size: 22px;
+	color: #000000;
+	font-weight: bold;
+	margin-bottom: 30px;
+	margin-left: 0px;
+}
+.alertdetail{
+	color: #000000;
+	font-size: 14px; 
+	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-left: 0px;
+}
+.alertdetail a{
+	font-size:13px; 
+	margin-bottom:20px; 
+	color:#999999;
+}
+.alertdetail a:hover{
+	color:#999999; 
+	text-decoration:underline;
+}
+.alertbullet{ 
+	line-height:25px;
+	margin-left: 0px;
+}
+.phone{
+	margin-left: 0px;
+}
+.iphonediv{
+	margin-left: 18px; 
+	margin-top: 38px;
+}
+.signup_label{
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+	margin-bottom: 1px;
+	margin-top: 7px;
+}
+#spambot_div{
+	margin-bottom: 20px;
+}
+.checkbox, #spambot_div{
+	font-size: 12px;
+	color: #383838;
+}
+.you_also{
+	font-size: 12px;
+	font-weight: bold;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+#signup_addimg{
+	position:absolute; 
+	opacity:1.9; 
+	margin-left: 20px; 
+	display:none; 
+	margin-top:-130px;
+}
+.why_div{
+	border: 1px solid #DDD;
+	moz-box-shadow: 3px 3px 3px #f5f5f5;
+	-webkit-box-shadow: 3px 3px 3px #f5f5f5;
+	box-shadow: 3px 3px 3px #f5f5f5;
+	margin-top: 40px;
+	background-color: #f8f8f8;
+}
+.wine_list li a{
+	font-size: 12px;
+	font-weight: bold;
+	text-decoration: underline;
+	color: #585858;
+}

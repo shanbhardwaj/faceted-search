@@ -1,0 +1,80 @@
+a.multiSelect {
+	float:left;
+	width:176px;
+	position:relative;
+	min-height: 20px;
+	z-index: 99999;
+	cursor:default;
+	text-decoration: none;
+	background-color:transparent;
+}
+
+a.multiSelect span
+{
+	margin-top:2px;
+	text-align:left;
+	position:relative;
+	min-height: 20px;
+	float: left;
+	text-decoration: none;
+	cursor:default;
+	margin-left:5px;
+}
+
+a.multia.hover {
+}
+
+a.multia.active, 
+a.multia.focus {
+	border: inset 1px #000;
+}
+
+a.multia.active {
+}
+
+.multiSelectOptions {
+	margin-top: -1px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	border: solid 1px #B2B2B2;
+	background: #fff;
+	text-align:left;
+}
+
+.multiSelectOptions LABEL {
+	padding: 2px 2px;
+	display: block;
+	white-space: nowrap;
+}
+
+.multiSelectOptions LABEL.optGroup
+{
+	font-weight: bold;
+}
+
+.multiSelectOptions .optGroupContainer LABEL
+{
+	padding-left: 10px;
+}
+
+.multiSelectOptions.optGroupHasCheckboxes .optGroupContainer LABEL
+{
+	padding-left: 18px;
+}
+
+.multiSelectOptions input{
+	vertical-align: middle;
+	margin-right:8px;
+}
+
+.multiSelectOptions LABEL.checked {
+	background-color: #EFEFEF;
+}
+
+.multiSelectOptions LABEL.selectAll {
+	border-bottom: dotted 1px #CCC;
+}
+
+.multiSelectOptions LABEL.hover {
+	background-color: #EFEFEF;
+}

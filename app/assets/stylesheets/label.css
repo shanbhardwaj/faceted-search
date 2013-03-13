@@ -1,0 +1,86 @@
+   .labels {
+     color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 9px;
+     text-align: center;
+     width: 10px;
+     font-weight:bold;     
+     white-space: nowrap;
+     padding-top: 4px;
+     text-shadow: -0.8px 0px 0.8px #F00;
+   }
+  .infowindow{
+  	position: absolute;
+  	background-color: #fff;
+  	width: 298px;
+  	height: 153px;
+  	border: 1px solid #ababab;
+  	z-index: 1;
+	border-radius: 6px;
+  	-webkit-border-radius: 6px;
+  	-moz-border-radius: 6px;
+  	moz-box-shadow: 2px 2px 3px #f5f5f5;
+	-webkit-box-shadow: 2px 2px 3px #f5f5f5;
+	box-shadow: 2px 2px 3px #f5f5f5;
+  }
+  .closeinfowindow{
+  	float: right;
+  	background-image: url("/assets/cross.png");
+  	width: 10px;
+  	height: 11px;
+  	border: 1px solid #00F;
+  	margin-right: 12px;
+  	margin-top: 5px;
+  }
+  .infowindowtext{
+  	color: #090909;
+  	font-size: 13px;
+  	font-weight: normal;
+  	font-family: "Arial","Lucida Grande", sans-serif;
+  	margin-top: 8px;
+  }
+ .title{
+ 	color: #3d3d3d;
+ 	font-weight: bold;
+ 	font-size: 15px;
+ 	width: 155px;
+ }
+ .imagediv{
+ 	float: right;
+ 	border: 1px solid #aaaaaa;
+	background-color: #bababa;
+ 	margin-top: 5px;
+ }
+.tooltip{
+	width: 0;
+	height: 0;
+	border-top: 80px solid #fff;
+	border-left: 0px solid transparent;
+	border-right: 32px solid transparent;
+	border-bottom: 0px solid transparent;
+	position: absolute;
+	top: 103px;
+	left: 151px;
+}
+.tooltipbase{
+	width: 0;
+	height: 0;
+	border-top: 80px solid #fff;
+	border-left: 0px solid transparent;
+	border-right: 32px solid transparent;
+	border-bottom: 0px solid transparent;
+	position: absolute;
+	top: 153px;
+	left: 151px;
+}
+.tooltip_outer{
+	width: 0;
+	height: 0;
+	border-top: 84px solid #ababab;
+	border-left: 0px solid transparent;
+	border-right: 34px solid transparent;
+	border-bottom: 0px solid transparent;
+	position: absolute;
+	top: 153px;
+	left: 150px;
+}

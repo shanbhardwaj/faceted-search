@@ -1,0 +1,60 @@
+.custom_nav_top{
+	width: 37px;
+	height: 15px;
+	font-size: large;
+	border: 0px solid; 
+	background-image:url('/assets/up.png');
+    margin-top: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.custom_nav_down{
+	width: 37px;
+	height: 15px;
+	font-size: large;
+	border: 0px solid; 
+	background-image:url('/assets/down.png');
+	margin-bottom: 20px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.custom_nav_left{
+	width: 15px;
+	height: 37px;
+	font-size: large;
+	border: 0px solid; 
+	background-image:url('/assets/left.png');
+  	margin-left: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.custom_nav_right{
+	width: 15px;
+	height: 37px;
+	font-size: large;
+	border: 0px solid; 
+	background-image:url('/assets/right.png');
+	margin-right: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.zoomin{
+	width: 21px;
+	height: 21px;
+	font-size: large;
+	border: 0px solid; 
+	background-image:url('/assets/zoomin.png');
+	background-repeat: no-repeat;
+	margin-left: 11px;
+	margin-bottom: 3px;
+	margin-top: 11px;
+}
+.zoomout{
+	width: 21px;
+	height: 21px;
+	font-size: large;
+	border: 0px solid; 
+	background-image:url('/assets/zoomout.png');
+	background-repeat: no-repeat;
+	margin-left: 11px;
+}

@@ -23,6 +23,7 @@ belongs_to :retailer
     string :white_varietal
     string :red_varietal
     string :champagne_varietal
+    float :price
     string(:year){ wine.year unless wine.nil? }
     # integer(:retailer_id, :multiple => true) do
     #   if retailer_ledgers.present?
@@ -44,6 +45,7 @@ belongs_to :retailer
     string(:wine_id_str) { wine_id.to_s}
     integer :retailer_id
     integer :wine_id, :stored => true
+    integer :value
 
   end
 
@@ -56,15 +58,9 @@ belongs_to :retailer
   end
 
   def expert_rating
-    rating = nil
-    total = 0
     if wine.present?
-      wine.wine_reviews.each do |rev|
-        total += rev.rating if rev.rating.present?
-      end
-      rating = total.to_f/wine.wine_reviews.count unless wine.wine_reviews.count <= 0
-    end
-    return rating
+     return wine.expert_points
+   end
   end
 
   def red_varietal
@@ -81,6 +77,17 @@ belongs_to :retailer
     if wine and wine.wine_type == "Sparkling/Champagne"
       return wine.varietal
     end
+  end
+
+  def value_img
+    if value == 1
+      return "/assets/goodvalue.png"
+    elsif value == 2
+      return "/assets/excellent.png"
+    elsif value == 3
+      return "/assets/incredible.png"
+    end
+    return ""
   end
 
 end

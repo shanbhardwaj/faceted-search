@@ -1,0 +1,349 @@
+/*Wine*/
+.font_22{
+	font-size: 22px;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	font-weight: bold;
+}
+.wine_img{
+	border: 1px solid #eee;
+	text-align: center;
+	vertical-align: middle;
+	margin-bottom: 25px;
+	height: 210px;
+	display: table-cell;
+}
+.abt_text{
+	font-size: 13px;
+	margin-bottom: 15px;
+	color: #1c1c1c;
+}
+.abt_textlink a{
+	font-size: 11px;
+	font-weight: bold;
+	color: #6f6f6f;
+	text-decoration: underline;
+}
+.text_grey{
+	color: #656565;
+}
+.text_grey a{
+	text-decoration: none;
+	color: #656565;
+}
+.abt_head{
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 25px;
+	margin-bottom: 5px;
+}
+.edit_abt_head{
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 25px;
+	margin-bottom: 15px;
+}
+.expert_name{
+	color: #6f6f6f;
+	font-size: 13px;
+}
+.add_expert_rev a{
+	font-size: 12px;
+	color: #6f6f6f;
+	text-decoration: underline;
+	
+}
+.rev_detail{
+	font-size: 13px;
+	color: #333232;
+}
+.rev_name{
+	color: #828282;
+	font-size: 11px;
+}
+.post_comments textarea{
+	color: #989898;
+	font-size: 13px;
+}
+.post_fb{
+	font-size: 13px;
+	color: #010101;
+}
+.btn-group > .btn, .btn-group > .dropdown-menu, .btn-group > .popover {
+	font-size: 12px;
+	width: 85px;
+}
+.cmpare_div div{
+	float: left;
+}
+.nearby_type{
+	font-size: 13px;
+	color: #757575;
+}
+.nearby_price{
+	font-size: 13px;
+	color: #333333;
+	font-weight: bold;
+}
+.nearby_place{
+	font-size: 11px;
+	color: #7c7272;
+}
+.div-price{
+	padding-left: 15px;
+	border: 1px solid #DDD;
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	padding-right: 20px;
+	moz-box-shadow: 2px 2px 3px #f5f5f5;
+	-webkit-box-shadow: 2px 2px 3px #f5f5f5;
+	box-shadow: 2px 2px 3px #f5f5f5;
+	margin-bottom: 30px;
+}
+.div_map{
+	margin-left: 10px;
+	border: 1px solid #DDD;
+	moz-box-shadow: 2px 2px 3px #f5f5f5;
+	-webkit-box-shadow: 2px 2px 3px #f5f5f5;
+	box-shadow: 2px 2px 3px #f5f5f5;
+}
+.expert_count{
+	font-size: 12px;
+	color: #898989;
+}
+.expert_count a{
+	font-size: 12px;
+	color: #898989;
+}
+.wine_rating{
+	padding: 8px 11px 2px 11px;
+	margin-bottom: 15px;
+}
+.wine_rating p{
+	margin-bottom: 4px;
+}
+.wine_prop{
+	color: #000;
+}
+.wine_prop_type a{
+	color: #696969;
+}
+.review_link a{
+	font-size: 11px;
+	color: #9b9b9b;
+	text-decoration: underline;
+}
+.review_link{
+	padding-top: 6px;
+}
+.summary_area .pagination{
+	margin-bottom: 35px;
+}
+.summary_area .pagination ul{
+	moz-box-shadow: 2px 2px 3px #f5f5f5;
+	-webkit-box-shadow: 2px 2px 3px #f5f5f5;
+	box-shadow: 2px 2px 3px #f5f5f5;
+}
+.summary_area{
+	margin-top: 8px;
+}
+@media (min-width: 1200px){
+	.email_sms{
+		margin-bottom: 10px;
+		margin-top: 62px;
+	}
+	.well.wine_detail_div{
+		margin-bottom: 10px;
+	}
+}
+@media (min-width: 768px) and (max-width: 1050px){
+	.email_sms{
+		margin-bottom: 10px;
+		margin-top: 62px;
+	}
+	.well.wine_detail_div{
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 767px){
+	.email_sms{
+		margin-bottom: 25px;
+		margin-top: 10px;
+	}
+	.well.wine_detail_div{
+		margin-bottom: 10px;
+	}
+}
+@media (max-width: 480px) {
+	.email_sms{
+		margin-bottom: 25px;
+		margin-top: 10px;
+	}
+	.well.wine_detail_div{
+		margin-bottom: 10px;
+	}
+}
+.email_sms a{
+	color: #595959;
+	font-size: 11px;
+	text-decoration: underline;
+}
+.email_sms a:hover{
+	font-weight: bold;
+}
+.report_inaccuracy{
+	margin-bottom: 5px;
+}
+.report_inaccuracy a{
+	color: #595959;
+	font-size: 11px;
+	text-decoration: none;
+}
+.wine_prop_div{
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+.social_icons{
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
+.social_icons .span15{
+	margin-left: 0px;
+}
+.abtwine_text{
+	font-size: 13px;
+	color: #000;
+}
+.text_black{
+	color: #000;
+}
+.abtprod_text{
+	font-size: 13px;
+	color: #010101;
+}
+.add_wine{
+	font-size: 12px;
+	color: #595959;
+	margin-top:15px;
+}
+.add_wine a{
+	cursor: pointer;
+}
+.store_name{
+	font-size: 13px;
+	color: #696969;
+}
+.store_val{
+	font-size: 12px;
+	color: #757575;
+}
+.findit_stores td{
+	height: 26px;
+}
+.findit_stores{
+	margin-bottom: 0px;
+}
+.more_store a{
+	font-size: 11px;
+	font-weight: bold;
+	color: #595959;
+	text-decoration: underline;
+	margin-top: 10px;
+}
+.edit_head{
+	font-size: 13px;
+	font-weight: bold;
+	color: #000;
+	margin-bottom: 10px;
+	margin-top: 14px;
+	width: 130px;
+	text-align: right;
+}
+.wine_edit_head{
+	font-size: 13px;
+	font-weight: bold;
+	color: #000;
+	margin-bottom: 10px;
+	margin-top: 14px;
+	text-align: right;
+}
+.wine_edit_label{
+	color: #2f2f2f;
+	font-size: 13px;
+}
+.edit_wine_details input, .edit_wine_details select{
+	margin-top: -2px;
+}
+.edit_wine_details select{
+	margin-bottom: 7px;
+	box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+	-webkit-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+}
+.findit_stores .span17, .abt_head .span17{
+	margin-left: 0px;
+}
+.store_heading{
+	color: #464646;
+	font-size: 12px;
+	font-weight: normal;
+}
+.findit_head{
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 25px;
+}
+.Date{
+	color:#999999; 
+	float: left;
+	font-size: 13px;
+}
+.commentdate {
+	color: #999;
+	margin-top: 1px;
+	float: left;
+	font-size: 13px;
+}
+.comment a {
+	color: #999;
+	text-decoration: none;
+	font-size: 13px;
+}
+#review_text{
+	box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+	-webkit-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.075);
+}
+#unreview_text{
+	font-size: 14px;
+	border-top-width: 0px;
+	border-top-right-radius: 0px;
+	border-top-left-radius: 0px;
+	display: none;
+	float: left;
+}
+#showReviewBox{
+	border: 1px solid #ccc; 
+	height: 197px;
+	border-radius: 4px;
+}
+#unreview_title{
+	margin-top: -1px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075);
+	-webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075);
+	-moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.075);
+}
+.wine_img img{
+	max-height: 210px; 
+	max-width: 182px;
+}
+.span17.store_name{
+	margin-left: 0px;
+}
+#barshowdiv .span7.well, #nearbyshowdiv .span7.well, #onlineshowdiv .span7.well{
+	padding-left: 14px;
+	padding-right: 24px;
+}
