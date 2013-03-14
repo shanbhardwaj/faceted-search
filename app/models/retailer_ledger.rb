@@ -41,6 +41,7 @@ belongs_to :retailer
     string :bottlesize
     string :wine_group_str
     string :retailer_type_group_str
+    string :wine_price_group_str
     string(:retailer_id_str) { retailer_id.to_s}
     string(:wine_id_str) { wine_id.to_s}
     integer :retailer_id
@@ -79,6 +80,22 @@ belongs_to :retailer
     end
   end
 
+  def wine_price_group_str
+    if price.present?
+      if price < 10
+        return wine_id.to_s + ",under10"
+      elsif price < 20
+        return wine_id.to_s + ",10-20"
+      elsif price < 30
+        return wine_id.to_s + ",20-30"
+      elsif price < 50
+        return wine_id.to_s + ",30-50"
+      elsif price >= 50
+        return wine_id.to_s + ",50+"
+      end
+    end
+  end
+
   def value_img
     if value == 1
       return "/assets/goodvalue.png"
@@ -89,5 +106,6 @@ belongs_to :retailer
     end
     return ""
   end
+
 
 end
