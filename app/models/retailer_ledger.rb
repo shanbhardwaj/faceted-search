@@ -13,7 +13,13 @@ belongs_to :retailer
 
   searchable do
     text(:wine_name, :boost => 5) { wine.wine_name unless wine.nil?}
+    text(:producer) { wine.producer unless wine.nil? }
+    text(:region) { wine.region unless wine.nil? }
+    text(:sub_region) { wine.sub_region unless wine.nil? }
+    text(:varietal) { wine.varietal unless wine.nil? }
     # text :region, :producer, :varietal, :year
+    # adjective, style missing
+    text(:wine_type) { wine.wine_type unless wine.nil? }
     string(:region) { wine.region unless wine.nil? }
     string(:sub_region) { wine.sub_region unless wine.nil? }
     string(:producer) { wine.producer unless wine.nil?}
@@ -25,6 +31,7 @@ belongs_to :retailer
     string :champagne_varietal
     float :price
     string(:year){ wine.year unless wine.nil? }
+    string(:varietal_type_str) { wine.varietal.to_s + "," + wine.wine_type.to_s unless wine.nil? }
     # integer(:retailer_id, :multiple => true) do
     #   if retailer_ledgers.present?
     #     self.retailer_ledgers.map { |l| l.retailer_id if l.in_stock and l.retailer.present?}
@@ -47,6 +54,7 @@ belongs_to :retailer
     integer :retailer_id
     integer :wine_id, :stored => true
     integer :value
+    string(:style) { wine.style unless wine.nil? }
 
   end
 

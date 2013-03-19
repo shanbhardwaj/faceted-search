@@ -6,6 +6,11 @@ class WinesController < ApplicationController
     lng = -118.495155
     size = (params[:bottlesize])? params[:bottlesize] : "750ML"
     page = (params[:page])? params[:page] : 1
+    # params[:retailer_type] = params[:retailer_type].split(",") if params[:retailer_type].present?
+    params[:varietal] = params[:varietal].split(",") if params[:varietal].present?
+    params[:region] = params[:region].split(",") if params[:region].present?
+    params[:sub_region] = params[:sub_region].split(",") if params[:sub_region].present?
+    params[:wine_type] = params[:wine_type].split(",") if params[:wine_type].present?
     @search = RetailerLedger.search do
       group :wine_group_str do
         order_by(:price, :asc)
@@ -17,7 +22,13 @@ class WinesController < ApplicationController
       else
         order_by(:value,:asc)
       end
-      fulltext params[:search]
+      if params[:sfield]
+        fulltext params[:search] do
+          fields(params[:sfield])
+        end
+      else
+        fulltext params[:search]
+      end
       if params[:distance].blank? and params[:retailer_type].blank?
         any_of do
           with(:location).in_radius(lat, lng, 50)
@@ -38,6 +49,7 @@ class WinesController < ApplicationController
       with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
       with(:year, params[:year]) if params[:year].present?
       with(:review, params[:review]) if params[:review].present?
+      with(:style, params[:style]) if params[:style].present?
       if params[:distance].present?
         loc = params[:distance].split("..")
         all_of do
@@ -113,7 +125,13 @@ end
     truncate
   end
 
-  fulltext params[:search]
+  if params[:sfield]
+    fulltext params[:search] do
+     fields(params[:sfield])
+    end
+  else
+    fulltext params[:search]
+  end
   if params[:distance].blank? and params[:retailer_type].blank?
     any_of do
       with(:location).in_radius(lat, lng, 50)
@@ -134,6 +152,7 @@ end
   with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
   with(:year, params[:year]) if params[:year].present?
   with(:review, params[:review]) if params[:review].present?
+  with(:style, params[:style]) if params[:style].present?
   if params[:distance].present?
     loc = params[:distance].split("..")
     all_of do
@@ -175,7 +194,13 @@ end
     truncate
   end
 
-  fulltext params[:search]
+  if params[:sfield]
+    fulltext params[:search] do
+      fields(params[:sfield])
+    end
+  else
+    fulltext params[:search]
+  end
   if params[:distance].blank? and params[:retailer_type].blank?
     any_of do
       with(:location).in_radius(lat, lng, 50)
@@ -196,6 +221,7 @@ end
   with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
   with(:year, params[:year]) if params[:year].present?
   with(:review, params[:review]) if params[:review].present?
+  with(:style, params[:style]) if params[:style].present?
   if params[:distance].present?
     loc = params[:distance].split("..")
     all_of do
@@ -264,7 +290,13 @@ if params[:distance].nil?
       truncate
     end
 
-    fulltext params[:search]
+    if params[:sfield]
+        fulltext params[:search] do
+          fields(params[:sfield])
+        end
+      else
+        fulltext params[:search]
+      end
       # any_of do
       with(:location).in_radius(lat, lng, 1)
         # with(:retailer_type, "Online Store")
@@ -283,6 +315,7 @@ if params[:distance].nil?
       with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
       with(:year, params[:year]) if params[:year].present?
       with(:review, params[:review]) if params[:review].present?
+      with(:style, params[:style]) if params[:style].present?
       # with(:location).in_radius(lat, lng, 1)
       if params[:expert_rating].present?
         rat = params[:expert_rating].split("..")
@@ -317,7 +350,13 @@ end
     truncate
   end
 
-  fulltext params[:search]
+  if params[:sfield]
+        fulltext params[:search] do
+          fields(params[:sfield])
+        end
+      else
+        fulltext params[:search]
+      end
   all_of do
     without(:location).in_radius(lat, lng, 1)
     with(:location).in_radius(lat, lng, 3)
@@ -337,6 +376,7 @@ end
       with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
       with(:year, params[:year]) if params[:year].present?
       with(:review, params[:review]) if params[:review].present?
+      with(:style, params[:style]) if params[:style].present?
       # with(:location).in_radius(lat, lng, 1)
       if params[:expert_rating].present?
         rat = params[:expert_rating].split("..")
@@ -370,7 +410,13 @@ end
       truncate
     end
 
-    fulltext params[:search]
+    if params[:sfield]
+        fulltext params[:search] do
+          fields(params[:sfield])
+        end
+      else
+        fulltext params[:search]
+      end
     all_of do
       without(:location).in_radius(lat, lng, 3)
       with(:location).in_radius(lat, lng, 5)
@@ -390,6 +436,7 @@ end
       with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
       with(:year, params[:year]) if params[:year].present?
       with(:review, params[:review]) if params[:review].present?
+      with(:style, params[:style]) if params[:style].present?
       # with(:location).in_radius(lat, lng, 1)
       if params[:expert_rating].present?
         rat = params[:expert_rating].split("..")
@@ -423,7 +470,13 @@ end
       truncate
     end
 
-    fulltext params[:search]
+    if params[:sfield]
+        fulltext params[:search] do
+          fields(params[:sfield])
+        end
+      else
+        fulltext params[:search]
+      end
     all_of do
       without(:location).in_radius(lat, lng, 5)
       with(:location).in_radius(lat, lng, 25)
@@ -443,6 +496,7 @@ end
       with(:champagne_varietal, params[:champagne_varietal]) if params[:champagne_varietal].present?
       with(:year, params[:year]) if params[:year].present?
       with(:review, params[:review]) if params[:review].present?
+      with(:style, params[:style]) if params[:style].present?
       # with(:location).in_radius(lat, lng, 1)
       if params[:expert_rating].present?
         rat = params[:expert_rating].split("..")
@@ -551,5 +605,355 @@ end
       format.html { redirect_to(wines_url) }
       format.xml  { head :ok }
     end
+  end
+
+  # Header Search
+  def hsearch_drpdwn
+    search = params[:search]
+    @d = 1
+    @m = 0
+    lat = 34.0126379
+    lng = -118.495155
+    if search.present? and search.length > 0
+
+      # Retailer Type
+      @retailerTypes = Retailer.search do
+        fulltext search do
+          fields(:retailer_type)
+        end
+        group :retailer_type do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, "Online Store")
+        end
+      end
+      @m += @retailerTypes.total
+
+      # Stores
+      @stores = Retailer.search do
+        fulltext search do
+          fields(:retailer_name)
+        end
+        any_of do
+          with(:retailer_type, 'Wine Store')
+          with(:retailer_type, 'Liquor Store')
+          with(:retailer_type, 'Grocery Store')
+          with(:retailer_type, 'Wholesalers')
+          with(:retailer_type, 'Grocery & Wine Store')
+          with(:retailer_type, 'Online Store')
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, "Online Store")
+        end
+      end
+      @m += @stores.total
+
+      # Restaurants & Bars
+      @restbars = Retailer.search do
+        fulltext search do
+          fields(:retailer_name)
+        end
+        any_of do
+          with(:retailer_type, 'Restaurant')
+          with(:retailer_type, 'Bar')
+          with(:retailer_type, 'Wine Bar')
+          with(:retailer_type, 'Tasting Room')
+          with(:retailer_type, 'Bring-Your-Own')
+          with(:retailer_type, 'Restaurant & Bar')
+          with(:retailer_type, 'Bring-Your-Own')
+        end
+          with(:location).in_radius(lat,lng,50)
+      end
+      @m += @restbars.total
+
+      # Producer
+      @producer = RetailerLedger.search do
+        fulltext search do
+          fields(:producer)
+        end
+        group :producer do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+
+      # Wine Type
+      @wineTypes = RetailerLedger.search do
+        fulltext search do
+          fields(:wine_type)
+        end
+        group :wine_type do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @wineTypes.total
+
+      # Varietals
+      @varietals = RetailerLedger.search do
+        fulltext search do
+          fields(:varietal)
+        end
+        group :varietal_type_str do
+            truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @varietals.total
+
+      # Region
+      @regions = RetailerLedger.search do
+        fulltext search do
+          fields(:region)
+        end
+        group :region do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @regions.total
+
+      # Sub-region
+      @subRegions = RetailerLedger.search do
+        fulltext search do
+          fields(:sub_region)
+        end
+        group :sub_region do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @subRegions.total
+
+      # Adjectives
+
+      # Styles
+      # @wineStyles = WinestyleFilter.search do
+      #   fulltext search
+      # end
+      # @m += @wineStyles.total
+
+      # Wine Name
+      @wines = RetailerLedger.search do
+        fulltext search do
+          fields(:wine_name)
+        end
+        group :wine_group_str do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @wines.total
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+
+  def hsearch
+    search = (params[:search].present?) ? params[:search] : ""
+    @m = 1
+    lat = 34.0126379
+    lng = -118.495155
+    # search = ""
+    # if search.present? and search.length > 0
+
+      # Retailer Type
+      @retailerTypes = Retailer.search do
+        fulltext search do
+          fields(:retailer_type)
+        end
+        group :retailer_type do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, "Online Store")
+        end
+      end
+      @m += @retailerTypes.total
+
+      # Stores
+      @stores = Retailer.search do
+        fulltext search do
+          fields(:retailer_name)
+        end
+        any_of do
+          with(:retailer_type, 'Wine Store')
+          with(:retailer_type, 'Liquor Store')
+          with(:retailer_type, 'Grocery Store')
+          with(:retailer_type, 'Wholesalers')
+          with(:retailer_type, 'Grocery & Wine Store')
+          with(:retailer_type, 'Online Store')
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, "Online Store")
+        end
+      end
+      @m += @stores.total
+
+      # Restaurants & Bars
+      @restbars = Retailer.search do
+        fulltext search do
+          fields(:retailer_name)
+        end
+        any_of do
+          with(:retailer_type, 'Restaurant')
+          with(:retailer_type, 'Bar')
+          with(:retailer_type, 'Wine Bar')
+          with(:retailer_type, 'Tasting Room')
+          with(:retailer_type, 'Bring-Your-Own')
+          with(:retailer_type, 'Restaurant & Bar')
+          with(:retailer_type, 'Bring-Your-Own')
+        end
+          with(:location).in_radius(lat,lng,50)
+      end
+      @m += @restbars.total
+
+      # Producer
+      @producer = RetailerLedger.search do
+        fulltext search do
+          fields(:producer)
+        end
+        group :wine_group_str do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+
+      # Wine Type
+      @wineTypes = RetailerLedger.search do
+        fulltext search do
+          fields(:wine_type)
+        end
+        group :wine_group_str do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @wineTypes.total
+
+      # Varietals
+      @varietals = RetailerLedger.search do
+        fulltext search do
+          fields(:varietal)
+        end
+        group :wine_group_str do
+            truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @varietals.total
+
+      # Region
+      @regions = RetailerLedger.search do
+        fulltext search do
+          fields(:region)
+        end
+        group :wine_group_str do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @regions.total
+
+      # Sub-region
+      @subRegions = RetailerLedger.search do
+        fulltext search do
+          fields(:sub_region)
+        end
+        group :wine_group_str do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @subRegions.total
+
+      # Adjectives
+
+      # Styles
+      # @wineStyles = WinestyleFilter.search do
+      #   fulltext search
+      # end
+      # @m += @wineStyles.total
+
+      # Wine Name
+      @wines = RetailerLedger.search do
+        fulltext search do
+          fields(:wine_name)
+        end
+        group :wine_group_str do
+          truncate
+        end
+        any_of do
+          with(:location).in_radius(lat,lng,50)
+          with(:retailer_type, 'Online Store')
+        end
+        with(:bottlesize, "750ML")
+        with(:in_stock, true)
+      end
+      @m += @wines.total
+    # end
+
   end
 end

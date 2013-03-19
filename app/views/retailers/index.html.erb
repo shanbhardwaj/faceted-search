@@ -1,0 +1,57 @@
+<table align="center" cellspacing="10" style = "width:70%">
+  <tr>
+    <td colspan="2">
+      <h1>Listing Retailers</h1> <h2> Total - <%= @search.total %> </h2>
+<%#= form_tag wines_path, :method => :get do %>
+    <%#= text_field_tag :search, params[:search] %>
+    <%#= submit_tag "Search", :name => nil %>
+  </p>
+<%# end %>
+    <%= link_to 'Next Page', :page => (params[:page])? params[:page].to_i + 1 : 2, :retailer_type=>params[:retailer_type]*"," %>
+</td>
+</tr>
+  <tr>
+    <td valign="top">
+<div id="facets">
+  <div class="span14 well wine_filter">
+  <div class="span2 filter_type">Retailer Type</div><br/>
+  <div class="span2 filter_name">
+  <ul>
+    <% for row in @search.facet(:retailer_type).rows %>
+      <li>
+        <% if params[:retailer_type].blank? %>
+          <%= link_to row.value, :retailer_type=> row.value, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :year => params[:year], :price => params[:price] %> (<%= row.count %>)<br/>
+        <% else %>
+          <strong><%= row.value %></strong> (<%= row.count %>)(<%= link_to "x", :retailer_type=> nil, :distance => params[:distance], :wine_type => params[:wine_type], :expert_rating => params[:expert_rating], :review => params[:review], :varietal => params[:varietal], :white_varietal => params[:white_varietal], :red_varietal => params[:red_varietal], :champagne_varietal => params[:champagne_varietal], :region => params[:region], :sub_region => params[:sub_region], :producer => params[:producer], :bottlesize => params[:bottlesize], :price => params[:price], :year => params[:year] %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul><br/>
+</div>
+</div>
+</div>
+</td>
+<td valign="top" style="width:80%;">
+<% @search.results.each do |retailer| %>
+    <!-- Wine Detail Row Start --> 
+      <div class="span6 well wine_detail_div">
+        <div class="media">
+          <div class="media-body">
+            <div class="wine_name"><%=retailer.retailer_name %></div>
+            <div class="wine_detail"><%= retailer.address %></div>
+            <br/>
+          </div>
+        </div>
+      </div>
+  <% end %>
+<div class="pagination_wine span6">
+  <div align="center" id="winepaggi"  class ="hiderow" style="position:absolute;margin-left:320px;margin-top:-40px"><img src="/assets/newajax-loader.gif"/></div>
+  <div align="center" id="findwinepage">
+<%#= link_to 'New Wine', new_wine_path %>        
+<%= link_to 'Next Page', :page => (params[:page])? params[:page].to_i + 1 : 2, :retailer_type=> params[:retailer_type] %>
+</div>
+</div>
+</td>
+</tr>
+</table>
+

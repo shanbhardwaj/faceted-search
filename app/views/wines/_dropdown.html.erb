@@ -1,0 +1,100 @@
+<% if @d.present? and @d > 0 %>
+	<% if @retailerTypes.present? and @retailerTypes.group(:retailer_type).total > 0 %>
+	<ul>
+		<%s=""%>
+		<% @retailerTypes.group(:retailer_type).groups.each do |g| %>
+		<% r = g.results[0].retailer %>
+		<li>
+			<%= r.stores %> <%= link_to 'Select', retailers_path(:retailer_type => r.stores) %>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+	<br/>
+	<% if @stores.present? and @stores.total > 0 %>
+	<ul>
+		<% @stores.results.each do |r| %>
+		<li>
+			<%= r.retailer_name %> (Stores) 
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+	<br/>
+	<% if @restbars.total > 0 %>
+	<ul>
+		<% @restbars.results.each do |r| %>
+		<li>
+			<%= r.retailer_name %> (Restaurant & Bars)
+		</li>
+		<% end %>
+	</ul>
+	<% end %> 
+	<br/>
+	<% if @producer.group(:producer).total > 0 %>
+	<ul>
+		<% @producer.group(:producer).groups.each do |r| %>
+		<% w = r.results[0].wine %>
+		<li>
+			<%= w.producer %> (Wine Producer) <%= link_to 'Select', wines_path(:producer => w.producer)%>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+	<br/>
+	<% if @wineTypes.group(:wine_type).total > 0 %>
+	<ul>
+		<% @wineTypes.group(:wine_type).groups.each do |g| %>
+		<% r = g.results[0].wine %>
+		<li>
+			<%= r.wine_type %> (Wine Type) <%= link_to 'Select', wines_path(:wine_type => r.wine_type)%>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+	<br/> 
+	<% if @varietals.group(:varietal_type_str).total > 0 %>
+	<ul>
+		<% @varietals.group(:varietal_type_str).groups.each do |g| %>
+		<% r = g.results[0].wine %>
+		<li>
+			<%= r.varietal %> (<%= r.wine_type %> Varietal) <%= link_to 'Select', wines_path(:varietal => r.varietal, :wine_type => r.wine_type)%>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+	<br/>
+	<% if @regions.group(:region).total > 0 %>
+	<ul>
+		<% @regions.group(:region).groups.each do |g| %>
+		<% r = g.results[0].wine %>
+		<li>
+			<%= r.region %> (Wine Region) <%= link_to 'Select', wines_path(:region => r.region) %>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+	<br/>
+	<% if @subRegions.group(:sub_region).total > 0 %>
+	<ul>
+		<% @subRegions.group(:sub_region).groups.each do |g| %>
+		<% r = g.results[0].wine %>
+		<li>
+			<%= r.sub_region + ", " + r.region %> (Wine Region) <%= link_to 'Select', wines_path(:sub_region => r.sub_region) %>
+		</li>
+		<% end %>
+	</ul>
+	<% end %> 
+	<br/>
+	<% if @wines.group(:wine_group_str).total > 0 %>
+	<ul>
+		<% @wines.group(:wine_group_str).groups.each do |r| %>
+		<% w = r.results[0].wine %>
+		<li>
+			<%= w.wine_name + " " + w.year %>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
+
+<% end %>

@@ -1,0 +1,63 @@
+<%= form_tag hsearch_wines_path, :method => :get do %>
+    <%= text_field_tag :search, params[:search], :onkeyup => "headersearch(this.value);" %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<div id ="dropdown_results" style="padding: 20px;">
+	<%= render 'dropdown' %>
+</div>
+<br/>
+<% if @d.nil? and params[:search].present? %>
+<div id ="final_results" style="padding: 20px;">
+<h4>Search Results</h4>
+<br/>
+<% if @m > 0 %>
+<ul>
+	<% if @retailerTypes.present? and @retailerTypes.group(:retailer_type).total > 0 %>
+		<li> <%= @retailerTypes.group(:retailer_type).total %> Results for <span style="font-weight:bold"><a href="<%=wines_path(:search => params[:search], :sfield => 'retailer_type') %>">Retailer Type</a></span></li><br/>
+	<% end %>
+	<% if @stores.present? and @stores.total > 0 %>
+	<li><%= @stores.total %> Results for <span style="font-weight:bold">Stores</span></li><br/>
+	<% end %>
+	<% if @restbars.total > 0 %>
+	<li><%= @restbars.total %> Results for <span style="font-weight:bold">Restaurants</a></span></li><br/>
+	<% end %> 
+	<% if @producer.group(:wine_group_str).total > 0 %>
+	<li><%= @producer.group(:wine_group_str).total %> Results for <span style="font-weight:bold"><a href="<%= wines_path(:search => params[:search], :sfield => 'producer') %>">Wine Producers</a></span></li><br/>
+	<% end %>
+	<% if @wineTypes.group(:wine_group_str).total > 0 %>
+	<li><%= @wineTypes.group(:wine_group_str).total %> Results for <span style="font-weight:bold"><a href="<%=wines_path(:search => params[:search], :sfield => 'wine_type') %>">Wine Types</a></span></li><br/>
+	<% end %>
+	<% if @varietals.group(:wine_group_str).total > 0 %>
+	<li><%= @varietals.group(:wine_group_str).total %> Results for <span style="font-weight:bold"><a href="<%=wines_path(:search => params[:search], :sfield => 'varietal') %>">Varietals</a></span></li><br/>
+	<% end %>
+	<% if @regions.group(:wine_group_str).total > 0 %>
+	<li><%= @regions.group(:wine_group_str).total %> Results for <span style="font-weight:bold"><a href="<%=wines_path(:search => params[:search], :sfield => 'region') %>">Region</a></span></li><br/>
+	<% end %>
+	<% if @subRegions.group(:wine_group_str).total > 0 %>
+	<li><%= @subRegions.group(:wine_group_str).total %> Results for <span style="font-weight:bold"><a href="<%=wines_path(:search => params[:search], :sfield => 'sub_region') %>">Sub-Regions</a></span></li><br/>
+	<% end %>
+	<% if @wines.group(:wine_group_str).total > 0 %>
+	<li><%= @wines.group(:wine_group_str).total %> Results for <span style="font-weight:bold"><a href="<%=wines_path(:search => params[:search], :sfield => 'wine_name') %>">Wines</a></span></li><br/>
+	<% end %>
+<% end %>
+</div>
+<% end %>
+
+<script type="text/javascript">
+function headersearch(txt){
+	if (txt.length >= 3)
+	{ 
+		jQuery.ajax({
+			url: "/wines/hsearch_drpdwn",
+			data: 'search='+txt,
+			success: function(data, status, xhr){
+			},
+			error: function(xhr, status){
+				alert("error");
+			}
+		});
+	}
+}
+</script>

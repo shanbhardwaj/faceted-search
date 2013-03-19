@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130313054433) do
+ActiveRecord::Schema.define(:version => 20130315060701) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20130313054433) do
   create_table "comments", :force => true do |t|
     t.integer  "article_id"
     t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "region_filters", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -81,6 +86,21 @@ ActiveRecord::Schema.define(:version => 20130313054433) do
     t.string   "sunday_on_hours",    :limit => 10
     t.string   "sunday_off_hours",   :limit => 10
     t.boolean  "by_the_glass"
+  end
+
+  create_table "retailertype_filters", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "subregion_filters", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "varietal_filters", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "wine_reviews", :force => true do |t|
@@ -186,6 +206,16 @@ ActiveRecord::Schema.define(:version => 20130313054433) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "varietal3",                          :limit => 50
+  end
+
+  create_table "winestyle_filters", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "winetype_filters", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
